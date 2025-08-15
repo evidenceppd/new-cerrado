@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'Magistral Extra';
+  src: url('../fonts/magistral/Magistral-ExtraBoldItalic.eot');
+  src: local('Magistral Extra Bold Italic'), local('Magistral-ExtraBoldItalic'),
+    url('../fonts/magistral/Magistral-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-ExtraBoldItalic.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-ExtraBoldItalic.woff') format('woff'),
+    url('../fonts/magistral/Magistral-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-LightItalic.eot');
+  src: local('Magistral Light Italic'), local('Magistral-LightItalic'),
+    url('../fonts/magistral/Magistral-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-LightItalic.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-LightItalic.woff') format('woff'),
+    url('../fonts/magistral/Magistral-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Magistral Extra';
+  src: url('../fonts/magistral/Magistral-ExtraBold.eot');
+  src: local('Magistral Extra Bold'), local('Magistral-ExtraBold'),
+    url('../fonts/magistral/Magistral-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-ExtraBold.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-ExtraBold.woff') format('woff'),
+    url('../fonts/magistral/Magistral-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-Medium.eot');
+  src: local('Magistral Medium'), local('Magistral-Medium'),
+    url('../fonts/magistral/Magistral-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-Medium.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-Medium.woff') format('woff'),
+    url('../fonts/magistral/Magistral-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magistral Book';
+  src: url('../fonts/magistral/Magistral-BookItalic.eot');
+  src: local('Magistral Book Italic'), local('Magistral-BookItalic'),
+    url('../fonts/magistral/Magistral-BookItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-BookItalic.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-BookItalic.woff') format('woff'),
+    url('../fonts/magistral/Magistral-BookItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Magistral Book';
+  src: url('../fonts/magistral/Magistral-Book.eot');
+  src: local('Magistral Book'), local('Magistral-Book'),
+    url('../fonts/magistral/Magistral-Book.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-Book.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-Book.woff') format('woff'),
+    url('../fonts/magistral/Magistral-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-Bold.eot');
+  src: local('Magistral Bold'), local('Magistral-Bold'),
+    url('../fonts/magistral/Magistral-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-Bold.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-Bold.woff') format('woff'),
+    url('../fonts/magistral/Magistral-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-Light.eot');
+  src: local('Magistral Light'), local('Magistral-Light'),
+    url('../fonts/magistral/Magistral-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-Light.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-Light.woff') format('woff'),
+    url('../fonts/magistral/Magistral-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-MediumItalic.eot');
+  src: local('Magistral Medium Italic'), local('Magistral-MediumItalic'),
+    url('../fonts/magistral/Magistral-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-MediumItalic.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-MediumItalic.woff') format('woff'),
+    url('../fonts/magistral/Magistral-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Magistral';
+  src: url('../fonts/magistral/Magistral-BoldItalic.eot');
+  src: local('Magistral Bold Italic'), local('Magistral-BoldItalic'),
+    url('../fonts/magistral/Magistral-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/magistral/Magistral-BoldItalic.woff2') format('woff2'),
+    url('../fonts/magistral/Magistral-BoldItalic.woff') format('woff'),
+    url('../fonts/magistral/Magistral-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+.container-fluid {
+  max-width: 1920px;
+}
+
+
+/*
+ *
+ ** Menu de Navegação
+ *
+ */
+nav.menu.fixed {
+  background-color: #163c67;
+}
+
+nav.menu .desktop ul>li #open-search-bar,
+nav.menu .desktop ul>li .cd-dropdown-trigger,
+nav.menu .desktop ul>li a.nav-item {
+  color: #fff;
+}
+
+.header-navbar #contact-li-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-navbar #contact-li-menu a img {
+  width: 40px;
+}
+
+.header-navbar #contact-li-menu a h3 {
+  color: #ffdf2e !important;
+  margin: 0;
+  font-family: 'Magistral', 'Titillium Web', sans-serif;
+}
+
+.header-navbar #contact-li-menu a h4 {
+  margin: 0;
+  margin-top: -4px;
+  color: #fff;
+  font-size: 28px;
+  font-family: 'Magistral', 'Titillium Web', sans-serif;
+  font-weight: 800;
+}
+
+.header-navbar #contact-li-menu a:hover,
+.header-navbar #contact-li-menu a:active,
+.header-navbar #contact-li-menu a:focus {
+  background-color: transparent;
+}
+
+.navbar-nav.navbar-left .img-box-bb-consorcios {
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav.navbar-left svg {
+  width: 200px;
+}
+
+.navbar-nav.navbar-left .img-box-bb-consorcios img {
+  width: 205px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  nav.menu.fixed .logo {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav.navbar-left .img-box-bb-consorcios img {
+    margin-top: 0px;
+  }
+}
+
+/*
+ *
+ ** Swiper Home
+ *
+ */
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*
+ *
+ ** Banner Home Index
+ *
+ */
+
+.banner-home-index {
+  background-color: #fff;
+  background-image: url(../images/bg/bg-home-index.jpg);
+  background-size: cover;
+  padding: 60px 0px 120px;
+}
+
+.banner-home-index .conteudo {
+  padding-bottom: 160px;
+}
+
+.banner-home-index .conteudo h1.title {
+  font-family: 'Magistral', 'Titillium Web', sans-serif;
+  color: #163c67;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 54px;
+}
+
+.banner-home-index .conteudo h1.title span {
+  font-weight: 800;
+}
+
+.banner-home-index .conteudo p.subtitle {
+  color: #163c67;
+  font-size: 22px;
+  font-family: 'Poppins', 'Titillium Web', sans-serif;
+  font-weight: 400;
+}
+
+.banner-home-index .conteudo .boxs {
+  display: flex;
+  gap: 10px;
+}
+
+.banner-home-index .conteudo .boxs .item-box img {
+  width: 50px;
+}
+
+.banner-home-index .conteudo .boxs .item-box {
+  aspect-ratio: 1/1;
+  background-color: #ffdf2e;
+  padding: 15px;
+  border-radius: 14px;
+}
+
+.banner-home-index .conteudo .box-right {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.banner-home-index .conteudo .box-right .box-header h3 {
+  font-family: 'Magistral', 'Titillium Web', sans-serif;
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+}
+
+
+.banner-home-index .conteudo .box-right .box-header {
+  background-color: #163c67;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.banner-home-index .conteudo .box-right .box-content {
+  background-color: #ffdf2e;
+  color: #163c67;
+  padding: 25px;
+}
+
+.banner-home-index .conteudo .box-right .box-content p {
+  font-size: 19px;
+  line-height: 28px;
+  font-weight: 400;
+  text-align: justify;
+  font-family: 'Poppins', 'Magistral', sans-serif;
+}
+
+
+.carrossel-title .text {
+  position: relative;
+  left: 50%;
+  top: 0px;
+  width: fit-content;
+  transform: translateX(-50%);
+  font-size: 180px;
+  line-height: 140px;
+  font-family: 'Magistral', 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+  color: #163c67;
+  font-weight: 800;
+}
+
+#banner-carro {
+  background-image: url(/assets/images/banner/1.jpg);
+  padding-top: 41.67%;
+  background-size: contain;
+}
+
+#banner-seguro-vida {
+  background-image: url(/assets/images/banner/2.jpg);
+  padding-top: 41.67%;
+  background-size: contain;
+}
+
+.details-footer {
+  height: 80px;
+  background-color: #2b3038;
+  background-image: url(/assets/images/icons/shape-1.svg);
+  background-size: contain;
+}
+
+@media (max-width: 1400px) {
+  .carrossel-title .text {
+    top: -40px;
+    font-size: 140px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #banner-seguro-vida {
+    background-image: url(/assets/images/banner/2-mobile.jpg);
+    padding-top: 197.36%;
+    background-size: contain;
+  }
+
+  #banner-carro {
+    background-image: url(/assets/images/banner/1-mobile.jpg);
+    padding-top: 174.50%;
+    background-size: contain;
+  }
+
+  .carrossel-title {
+    display: none;
+  }
+
+
+  .banner-home-index {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  .banner-home-index .conteudo h1.title {
+    font-size: 36px;
+    line-height: 34px;
+    margin-top: 0;
+  }
+
+  .banner-home-index .conteudo p.subtitle {
+    font-size: 16px;
+  }
+
+  .banner-home-index .conteudo .box-right {
+    margin-top: 30px;
+  }
+
+  .banner-home-index .conteudo .box-right .box-header h3 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .banner-home-index .conteudo .box-right .box-content {
+    padding: 15px;
+  }
+
+  .banner-home-index .conteudo .box-right .box-content p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    line-height: 1.42857143;
+  }
+
+  .banner-home-index .conteudo {
+    padding-bottom: 0;
+  }
+
+  .banner-home-index .conteudo .boxs .item-box {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+
+  .banner-home-index .conteudo .boxs .item-box img {
+    width: 40px;
+  }
+}

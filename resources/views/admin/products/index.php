@@ -1,0 +1,60 @@
+/*CUT HERE;)*//*CUT HERE;)*/
+
+/**
+ * LARAVEL - A PHP FRAMEWORK FOR WEB ARTISANS
+ *
+ * @PACKAGE  LARAVEL
+ * @AUTHOR   TAYLOR OTWELL <TAYLOR@LARAVEL.COM>
+ */
+
+// DEFINE('LARAVEL_START', MICROTIME(TRUE));
+
+// /*
+// |--------------------------------------------------------------------------
+// | REGISTER THE AUTO LOADER
+// |--------------------------------------------------------------------------
+// |
+// | COMPOSER PROVIDES A CONVENIENT, AUTOMATICALLY GENERATED CLASS LOADER FOR
+// | OUR APPLICATION. WE JUST NEED TO UTILIZE IT! WE'LL SIMPLY REQUIRE IT
+// | INTO THE SCRIPT HERE SO THAT WE DON'T HAVE TO WORRY ABOUT MANUAL
+// | LOADING ANY OF OUR CLASSES LATER ON. IT FEELS GREAT TO RELAX.
+// |
+// */
+
+// REQUIRE __DIR__.'/../VENDOR/AUTOLOAD.PHP';
+
+// /*
+// |--------------------------------------------------------------------------
+// | TURN ON THE LIGHTS
+// |--------------------------------------------------------------------------
+// |
+// | WE NEED TO ILLUMINATE PHP DEVELOPMENT, SO LET US TURN ON THE LIGHTS.
+// | THIS BOOTSTRAPS THE FRAMEWORK AND GETS IT READY FOR USE, THEN IT
+// | WILL LOAD UP THIS APPLICATION SO THAT WE CAN RUN IT AND SEND
+// | THE RESPONSES BACK TO THE BROWSER AND DELIGHT OUR USERS.
+// |
+// */
+
+// $APP = REQUIRE_ONCE __DIR__.'/../BOOTSTRAP/APP.PHP';
+
+// /*
+// |--------------------------------------------------------------------------
+// | RUN THE APPLICATION
+// |--------------------------------------------------------------------------
+// |
+// | ONCE WE HAVE THE APPLICATION, WE CAN HANDLE THE INCOMING REQUEST
+// | THROUGH THE KERNEL, AND SEND THE ASSOCIATED RESPONSE BACK TO
+// | THE CLIENT'S BROWSER ALLOWING THEM TO ENJOY THE CREATIVE
+// | AND WONDERFUL APPLICATION WE HAVE PREPARED FOR THEM.
+// |
+// */
+
+// $KERNEL = $APP->MAKE(ILLUMINATE\CONTRACTS\HTTP\KERNEL::CLASS);
+
+// $RESPONSE = $KERNEL->HANDLE(
+//     $REQUEST = ILLUMINATE\HTTP\REQUEST::CAPTURE()
+// );
+
+// $RESPONSE->SEND();
+
+// $KERNEL->TERMINATE($REQUEST, $RESPONSE);

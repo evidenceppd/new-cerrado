@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CorretorController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\PostController;
@@ -78,6 +79,13 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::get('/clientes/edit/{id}', [CustomerController::class, 'edit'])->name('customers.edit');
     Route::post('/clientes/edit/{id}', [CustomerController::class, 'update'])->name('customers.update');
     Route::post('/clientes/delete/{id}', [CustomerController::class, 'destroy'])->name('customers.delete');
+
+    Route::get('/corretores', [CorretorController::class, 'index'])->name('corretores.index');
+    Route::get('/corretores/create', [CorretorController::class, 'create'])->name('corretores.create');
+    Route::post('/corretores/create', [CorretorController::class, 'store'])->name('corretores.store');
+    Route::get('/corretores/edit/{id}', [CorretorController::class, 'edit'])->name('corretores.edit');
+    Route::post('/corretores/edit/{id}', [CorretorController::class, 'update'])->name('corretores.update');
+    Route::post('/corretores/delete/{id}', [CorretorController::class, 'destroy'])->name('corretores.delete');
 });
 
 require __DIR__ . '/auth.php';

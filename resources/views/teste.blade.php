@@ -164,19 +164,77 @@
                                     <ul>
                                         <li style="font-weight: 600;border-bottom: 1px solid #6e6d6d36; padding: 15px 12px;"
                                             class="acesso-parceiros-lista">Nossos seguros</li>
-                                        @foreach ($categories as $categorie)
-                                            <li class="acesso-parceiros-lista">
-                                                <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                    alt="Clique para ver">
-                                                <a href="{{ $categorie->link }}" class="dropdown-item" aria-label="{{ $categorie->name }}"
-                                                    rel="noopener noreferrer">{{ $categorie->name }}</a>
-                                            </li>
-                                        @endforeach
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Vida" target="_blank"
+                                                rel="noopener noreferrer">Seguro de Vida</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Saúde"
+                                                rel="noopener noreferrer">Seguro de Saúde</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Automóvel" target="_blank"
+                                                rel="noopener noreferrer">Seguro de Automóvel</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro Residencial"
+                                                href="https://www.tokiomarine.com.br/lp/consultor-negocios/"
+                                                rel="noopener noreferrer">Seguro Residencial</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro Empresarial"
+                                                rel="noopener noreferrer">Seguro Empresarial</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Responsabilidade Civil"
+                                                target="_blank" rel="noopener noreferrer">
+                                                Seguro de Responsabilidade Civil
+                                            </a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro Viagem"
+                                                rel="noopener noreferrer">Seguro Viagem</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro Educacional" target="_blank"
+                                                rel="noopener noreferrer">Seguro Educacional</a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Equipamentos"
+                                                href="/parceiro-de-negocios/" rel="noopener noreferrer">
+                                                Seguro de Equipamentos
+                                            </a>
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item" aria-label="Seguro de Crédito" target="_blank"
+                                                rel="noopener noreferrer">Seguro de Crédito</a>
+                                        </li>
+
                                     </ul>
                                 </li>
-                            </ul> 
+                            </ul>
                         </div>
-                    </li> 
+                    </li>
                     <li class="dropdownMenu">
                         <a href="javascript:void(14)" class="novo-btn-area-do-corretor" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" role="button" aria-label="Parceiros"
@@ -197,7 +255,7 @@
                                     <ul>
                                         <li style="font-weight: 600;border-bottom: 1px solid #6e6d6d36; padding: 15px 12px;"
                                             class="acesso-parceiros-lista">Nossos corretores</li>
-                                        {{-- <li class="acesso-parceiros-lista">
+                                        <li class="acesso-parceiros-lista">
                                             <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
                                                 alt="Clique para ver">
                                             <a class="dropdown-item"
@@ -244,20 +302,17 @@
                                                 rel="noopener noreferrer">
                                                 Antonia - Agente de Crédito em Piracanjuba
                                             </a>
-                                        </li> --}}
-                                        @foreach ($corretores as $corretor)
-                                            <li class="acesso-parceiros-lista">
-                                                <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                    alt="Clique para ver">
-                                                <a class="dropdown-item"
-                                                    aria-label=" {{ $corretor->name }} - {{ $corretor->especialidade }}"
-                                                    href="https://wa.me/55{{ $corretor->phone }}" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    {{ $corretor->name }} - {{ $corretor->especialidade }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-
+                                        </li>
+                                        <li class="acesso-parceiros-lista">
+                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
+                                                alt="Clique para ver">
+                                            <a class="dropdown-item"
+                                                aria-label="Maria Eduarda - Agente de Crédito em Goiatuba"
+                                                href="https://wa.me/5564992715015" target="_blank"
+                                                rel="noopener noreferrer">
+                                                Maria Eduarda - Agente de Crédito em Goiatuba
+                                            </a>
+                                        </li>
 
                                     </ul>
                                 </li>
@@ -817,7 +872,7 @@
                 <div class="desktop">
                     <ul class="nav navbar-nav navbar-right">
                         <li style="display: flex;" class="no-children">
-                            <a class="nav-item" href="/" title="Ir para Afinidades"
+                            <a class="nav-item" href="/afinidades/" title="Ir para Afinidades"
                                 id="btn-menu-afinidades">
                                 Início </a>
                         </li>
@@ -898,62 +953,273 @@
                 </div>
             </div>
 
+            //NAV A SER ALTERADA
             <div class="menuItems" id="menuItems-para-voce-2" data-child-of="para-voce-2">
                 <div class="row">
                     <div class="side col-md-4">
                         <ul aria-orientation="vertical" aria-controls="menu" role="listbox">
-                            @foreach ($categories_geral as $item)
-                                <li role="group">
-                                    <a class="link {{ $loop->iteration == 1 ? 'active' : '' }}"
-                                        href="{{ $item->link }}" target="" alt="{{ $item->name }}"
-                                        title="Ir para {{ $item->name }}"
-                                        data-target="{{ $item->slug }}-{{ $item->id }}-items">
-                                        <span>{{ $item->name }}</span>
-                                        <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
-                                            alt="Abrir" title="abrir" width="10px" height="10px">
-                                    </a>
-                                </li>
-                            @endforeach
+                            <li role="group">
+                                <a class="link active" href="https://www.tokiomarine.com.br/seguro-viagem/"
+                                    target="" alt="Seguros Viagem" title="Ir para Seguros Viagem"
+                                    data-target="seguro-viagem-2-items">
+                                    <span>Seguros Viagem</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="/seguro-automoveis/" target=""
+                                    alt="Seguros de Automóveis" title="Ir para Seguros de Automóveis"
+                                    data-target="seguros-para-automoveis-items">
+                                    <span>Seguros de Automóveis</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="/seguro-residenciais/" target=""
+                                    alt="Seguros para Residências" title="Ir para Seguros para Residências"
+                                    data-target="seguros-para-residencias-items">
+                                    <span>Seguros para Residências</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="/seguro-vida/" target="" alt="Seguros de Vida"
+                                    title="Ir para Seguros de Vida" data-target="seguros-de-vida-2-items">
+                                    <span>Seguros de Vida</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="/seguro-acidentes/" target=""
+                                    alt="Seguros de Acidentes Pessoais" title="Ir para Seguros de Acidentes Pessoais"
+                                    data-target="seguros-de-acidentes-pessoais-items">
+                                    <span>Seguros de Acidentes Pessoais</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
                         </ul>
                     </div>
-
-
                     <div class="menu-items col-md-8">
-                        @foreach ($categories_geral as $item)
-                            <div id="{{ $item->slug }}-{{ $item->id }}-items"
-                                class="menu-item menu-item{{ $loop->iteration }} {{ $loop->iteration == 1 ? 'active' : '' }} {{ isset($item->comunicado->name) ? 'half' : 'full' }}">
-                                <ul class="submenu-items">
-                                    @foreach ($item->products as $product_item)
-                                        <li class="submenu-item">
-                                            <a class="link" href="/seguro"
-                                                title="Ir para {{ $product_item->name }}">
-                                                {{ $product_item->name }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                @if (isset($item->comunicado) && $item->comunicado->mostrar == 1)
-                                    <div class="wrapper-comunicado">
-                                        <div class="comunicado cinza"
-                                            aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            <img class="icone"
-                                                style="{{ $item->comunicado->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                src="{{ $item->comunicado->icon_path }}"
-                                                alt="{{ $item->comunicado->name }}"
-                                                title="{{ $item->comunicado->name }}">
+                        <div id="seguro-viagem-2-items" class="menu-item menu-item1 active half">
 
-                                            <p class="title">{{ $item->comunicado->name }}</p>
-                                            <p class="text">{{ $item->comunicado->description }}</p>
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-viagem-nacional-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Viagem Nacional">
+                                        Seguro Viagem Nacional </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-viagem-3-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Viagem Internacional">
+                                        Seguro Viagem Internacional </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-cotacao-seguro-viagem-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Cotação Seguro Viagem">
+                                        Cotação Seguro Viagem </a>
+                                </li>
+                            </ul>
+                            <div class="wrapper-comunicado">
+                                <div class="comunicado verde" aria-label="Ir para Cotação do Seguros Viagem">
 
-                                            <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="{{ $item->comunicado->link }}">Cote
-                                                Agora</a>
-                                        </div>
-                                    </div>
-                                @endif
+                                    <img class="icone"
+                                        src="https://www.tokiomarine.com.br/wp-content/uploads/2024/08/Viagem.png"
+                                        alt="Seguro Viagem" title="Seguro Viagem">
+
+                                    <p class="title">Seguro Viagem</p>
+                                    <p class="text">Independente do seu destino, os benefícios do Seguro Viagem
+                                        Tokio
+                                        Marine foram pensados para você</p>
+
+                                    <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
+                                        href="https://cotacoes.tokiomarine.com.br/sva/view/digital/seguro-viagem/#/seguro-viagem">Cote
+                                        Agora</a>
+                                </div>
                             </div>
-                        @endforeach
+                        </div>
+
+                        <div id="seguros-para-automoveis-items" class="menu-item menu-item2 half">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguros-auto-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto">
+                                        Seguro Auto </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-auto-classico-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto Clássico">
+                                        Seguro Auto Clássico </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-auto-economico-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto Econômico">
+                                        Seguro Auto Econômico </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-auto-roubo-2-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto Roubo">
+                                        Seguro Auto Roubo </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-auto-roubo-rastreador-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto Roubo + Rastreador">
+                                        Seguro Auto Roubo + Rastreador </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-moto-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro de Moto">
+                                        Seguro de Moto </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-caminhao-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Caminhão">
+                                        Seguro Caminhão </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-utilitario-carga-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Utilitário Carga">
+                                        Seguro Utilitário Carga </a>
+                                </li>
+                            </ul>
+                            <div class="wrapper-comunicado">
+                                <div class="comunicado cinza" aria-label="Ir para Cotação do Seguros de Automóveis">
+
+                                    <img class="icone"
+                                        src="https://www.tokiomarine.com.br/wp-content/uploads/2024/08/Group-10138-1.svg"
+                                        alt="Seguro Auto" title="Seguro Auto">
+
+                                    <p class="title">Seguro Auto</p>
+                                    <p class="text">Cote Seguro Auto e conheça as coberturas e assistências.</p>
+
+                                    <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
+                                        href="https://cotacoes.tokiomarine.com.br/massificados/auto/digital/front/#/home?">Cote
+                                        Agora</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="seguros-para-residencias-items" class="menu-item menu-item3 half">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-residencial-premiado-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Residencial Premiado">
+                                        Seguro Residencial Premiado </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-fianca-locaticia-aluguel-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Fiança Locatícia - Aluguel">
+                                        Seguro Fiança Locatícia - Aluguel </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-imobiliario-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Imobiliário">
+                                        Seguro Imobiliário </a>
+                                </li>
+                            </ul>
+                            <div class="wrapper-comunicado">
+                                <div class="comunicado cinza"
+                                    aria-label="Ir para Cotação do Seguros para Residências">
+
+                                    <img class="icone"
+                                        src="https://www.tokiomarine.com.br/wp-content/uploads/2024/08/Aluguel.png"
+                                        alt="Seguro Aluguel" title="Seguro Aluguel">
+
+                                    <p class="title">Seguro Aluguel</p>
+                                    <p class="text">O Seguro Aluguel Cerrado Seguros e Consórcios, um Seguro que
+                                        substitui o fiador
+                                        e
+                                        cheque caução. </p>
+
+                                    <a class="btn" target="_self" title="Cote Online" alt="Cote Online"
+                                        href="https://portalparceiros.tokiomarine.com.br/portais/ui/lead/#/aluguel/">Cote
+                                        Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="seguros-de-vida-2-items" class="menu-item menu-item4 half">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-funeral-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Funeral +">
+                                        Seguro Funeral + </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-de-vida-senior-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Vida Individual">
+                                        Seguro Vida Individual </a>
+                                </li>
+                            </ul>
+                            <div class="wrapper-comunicado">
+                                <div class="comunicado branco" aria-label="Ir para Cotação do Seguros de Vida">
+
+                                    <img class="icone"
+                                        src="https://www.tokiomarine.com.br/wp-content/uploads/2024/08/home-cards-seguro-vida-funeral-branco.svg"
+                                        alt="Seguro Funeral" title="Seguro Funeral">
+
+                                    <p class="title">Seguro Funeral</p>
+                                    <p class="text">Mais que um Plano Funeral: Orientação para Testamento e
+                                        Inventário.
+                                        Cote o nosso Seguro Funeral +</p>
+
+                                    <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
+                                        href="https://cotacoes.tokiomarine.com.br/sva/view/digital/vida-individual/#/seguro-funeral/cotacoes">Cote
+                                        Agora</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="seguros-de-acidentes-pessoais-items" class="menu-item menu-item5 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-de-acidentes-pessoais-individual-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro de Acidentes Pessoais Individual">
+                                        Seguro de Acidentes Pessoais Individual </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-de-acidentes-pessoais-estagiario-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro de Acidentes Pessoais Estagiário">
+                                        Seguro de Acidentes Pessoais Estagiário </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -961,57 +1227,400 @@
                 <div class="row">
                     <div class="side col-md-4">
                         <ul aria-orientation="vertical" aria-controls="menu" role="listbox">
-                            @foreach ($categories_para_empresa as $item)
-                                <li role="group">
-                                    <a class="link {{ $loop->iteration == 1 ? 'active' : '' }}"
-                                        href="{{ $item->link }}" target="" alt="{{ $item->name }}"
-                                        title="Ir para {{ $item->name }}"
-                                        data-target="{{ $item->slug }}-{{ $item->id }}-items">
-                                        <span>{{ $item->name }}</span>
-                                        <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
-                                            alt="Abrir" title="abrir" width="10px" height="10px">
-                                    </a>
-                                </li>
-                            @endforeach
+                            <li role="group">
+                                <a class="link active" href="/seguro" target="" alt="Seguros Empresariais"
+                                    title="Ir para Seguros Empresariais" data-target="seguros-empresariais-items">
+                                    <span>Seguros Empresariais</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target="" alt="Seguros Patrimoniais"
+                                    title="Ir para Seguros Patrimoniais"
+                                    data-target="seguros-de-grandes-riscos-e-energy-items">
+                                    <span>Seguros Patrimoniais</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target=""
+                                    alt="Seguros de Vida para Empresas"
+                                    title="Ir para Seguros de Vida para Empresas"
+                                    data-target="seguros-de-vida-para-empresas-items">
+                                    <span>Seguros de Vida para Empresas</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target="" alt="Seguros para Imóveis"
+                                    title="Ir para Seguros para Imóveis" data-target="seguros-para-imoveis-items">
+                                    <span>Seguros para Imóveis</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target="" alt="Seguros para Agronegócios"
+                                    title="Ir para Seguros para Agronegócios"
+                                    data-target="seguros-para-agronegocios-items">
+                                    <span>Seguros para Agronegócios</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target=""
+                                    alt="Seguros de Responsabilidade Civil"
+                                    title="Ir para Seguros de Responsabilidade Civil"
+                                    data-target="seguros-de-responsabilidade-civil-items">
+                                    <span>Seguros de Responsabilidade Civil</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
+                            <li role="group">
+                                <a class="link" href="#" target="" alt="Gestão"
+                                    title="Ir para Gestão" data-target="seguros-de-riscos-diversos-items">
+                                    <span>Gestão</span>
+
+                                    <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                        alt="Abrir" title="abrir" width="10px" height="10px">
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="menu-items col-md-8">
-                        @foreach ($categories_para_empresa as $item)
-                            <div id="{{ $item->slug }}-{{ $item->id }}-items"
-                                class="menu-item menu-item{{ $loop->iteration }} {{ $loop->iteration == 1 ? 'active' : '' }} {{ isset($item->comunicado->name) ? 'half' : 'full' }}">
-                                <ul class="submenu-items">
-                                    @foreach ($item->products as $product_item)
-                                        <li class="submenu-item">
-                                            <a class="link" href="/seguro"
-                                                title="Ir para {{ $product_item->name }}">
-                                                {{ $product_item->name }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                @if (isset($item->comunicado) && $item->comunicado->mostrar == 1)
-                                    <div class="wrapper-comunicado">
-                                        <div class="comunicado cinza"
-                                            aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            <img class="icone"
-                                                style="{{ $item->comunicado->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                src="{{ $item->comunicado->icon_path }}"
-                                                alt="{{ $item->comunicado->name }}"
-                                                title="{{ $item->comunicado->name }}">
+                        <div id="seguros-empresariais-items" class="menu-item menu-item1 active half">
 
-                                            <p class="title">{{ $item->comunicado->name }}</p>
-                                            <p class="text">{{ $item->comunicado->description }}</p>
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-empresarial-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Empresarial">
+                                        Seguro Empresarial </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-garantia-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Garantia">
+                                        Seguro Garantia </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-riscos-digitais-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Riscos Cibernéticos">
+                                        Seguro Riscos Cibernéticos </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-transportes-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Transportes">
+                                        Seguro Transportes </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-auto-frota-2-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Auto Frota">
+                                        Seguro Auto Frota </a>
+                                </li>
+                            </ul>
+                            <div class="wrapper-comunicado">
+                                <div class="comunicado branco" aria-label="Ir para Cotação do Seguros Empresariais">
 
-                                            <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="{{ $item->comunicado->link }}">Cote
-                                                Agora</a>
-                                        </div>
-                                    </div>
-                                @endif
+
+                                    <p class="title">Seguro Empresarial</p>
+                                    <p class="text">O Seguro para você ficar mais protegido e só pensar no sucesso
+                                        dos
+                                        melhores negócios.</p>
+
+                                    <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
+                                        href="/seguro">Cote
+                                        Agora</a>
+                                </div>
                             </div>
-                        @endforeach
+                        </div>
 
+                        <div id="seguros-de-grandes-riscos-e-energy-items" class="menu-item menu-item2 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-energia-sustentavel-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Energia Sustentável">
+                                        Seguro Energia Sustentável </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-equipamentos-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Equipamentos">
+                                        Seguro Equipamentos </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-riscos-de-engenharia-e-responsabilidade-civil-obras-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Riscos de Engenharia e Responsabilidade Civil Obras">
+                                        Seguro Riscos de Engenharia e Responsabilidade Civil Obras </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-valores-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Valores">
+                                        Seguro Valores </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-riscos-nomeados-e-operacionais-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Riscos Nomeados e Operacionais">
+                                        Seguro Riscos Nomeados e Operacionais </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-obras-de-artes-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Obras de Artes">
+                                        Seguro Obras de Artes </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-riscos-de-petroleo-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Riscos de Petróleo">
+                                        Seguro Riscos de Petróleo </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-roubo-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Roubo">
+                                        Seguro Roubo </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-construtor-naval-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Construtor Naval">
+                                        Seguro Construtor Naval </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-operador-portuario-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Operador Portuário">
+                                        Seguro Operador Portuário </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="seguros-de-vida-para-empresas-items" class="menu-item menu-item3 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-acidentes-pessoais-passageiros-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Acidentes Pessoais Passageiros">
+                                        Seguro Acidentes Pessoais Passageiros </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-prestamista-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Prestamista">
+                                        Seguro Prestamista </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-simples-vida-vg-capital-global-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Simples Vida - VG Capital Global">
+                                        Seguro Simples Vida - VG Capital Global </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-acidentes-pessoais-escolar-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Acidentes Pessoais Escolar">
+                                        Seguro Acidentes Pessoais Escolar </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-vida-em-grupo-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Vida em Grupo">
+                                        Seguro Vida em Grupo </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-acidentes-pessoais-assistur-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Acidentes Pessoais Assistur">
+                                        Seguro Acidentes Pessoais Assistur </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-vida-em-grupo-pme-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Vida em Grupo - PME">
+                                        Seguro Vida em Grupo - PME </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-acidentes-pessoais-coletivo-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Acidentes Pessoais Coletivo">
+                                        Seguro Acidentes Pessoais Coletivo </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-simples-vida-ap-capital-global-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Simples Vida - AP Capital Global">
+                                        Seguro Simples Vida - AP Capital Global </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-vida-convencoes-coletivas-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Vida Convenções Coletivas">
+                                        Seguro Vida Convenções Coletivas </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="seguros-para-imoveis-items" class="menu-item menu-item4 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-condominio-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Condomínio">
+                                        Seguro Condomínio </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-fianca-locaticia-aluguel-2-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Fiança Locatícia - Aluguel">
+                                        Seguro Fiança Locatícia - Aluguel </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-imobiliario-2-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Imobiliário">
+                                        Seguro Imobiliário </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-habitacional-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Habitacional">
+                                        Seguro Habitacional </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="seguros-para-agronegocios-items" class="menu-item menu-item5 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-agro-equipamentos-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Seguro Agro Fazendas">
+                                        Seguro Agro Fazendas </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-agro-safras-sublink" alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Agro Safras">
+                                        Seguro Agro Safras </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="seguros-de-responsabilidade-civil-items" class="menu-item menu-item6 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-prestacao-de-servicos-em-locais-de-terceiros-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Prestação de Serviços em Locais de Terceiros">
+                                        Seguro Responsabilidade Civil Prestação de Serviços em Locais de Terceiros </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-geral-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Geral">
+                                        Seguro Responsabilidade Civil Geral </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-profissional-eo-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Profissional - E&O">
+                                        Seguro Responsabilidade Civil Profissional - E&O </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-riscos-ambientais-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Ambiental - Transporte Terrestre Rodoviário">
+                                        Seguro Responsabilidade Civil Ambiental - Transporte Terrestre Rodoviário </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-ambiental-instalacoes-fixas-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Ambiental - Instalações em Empresas Fixas">
+                                        Seguro Responsabilidade Civil Ambiental - Instalações em Empresas Fixas </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-executivos-directors-and-officers-do-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Executivos Directors and Officers- D&O">
+                                        Seguro Responsabilidade Civil Executivos Directors and Officers- D&O </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-eventos-e-exposicoes-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Eventos e Exposições">
+                                        Seguro Responsabilidade Civil Eventos e Exposições </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-responsabilidade-civil-filmes-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Responsabilidade Civil Filmes">
+                                        Seguro Responsabilidade Civil Filmes </a>
+                                </li>
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-aeronautico-reta-sublink"
+                                        alt=">?= $grandChild->title ?>"
+                                        title="Ir para Seguro Aeronáutico - RETA (Responsabilidade Explorador ou Transportador Aéreo)">
+                                        Seguro Aeronáutico - RETA (Responsabilidade Explorador ou Transportador Aéreo)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="seguros-de-riscos-diversos-items" class="menu-item menu-item7 full">
+
+                            <ul class="submenu-items">
+                                <li class="submenu-item">
+                                    <a class="link" href="/seguro" target=""
+                                        id="btn-menu-seguro-gerenciamento-de-risco-sublink"
+                                        alt=">?= $grandChild->title ?>" title="Ir para Gerenciamento de Risco">
+                                        Gerenciamento de Risco </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1022,9 +1631,10 @@
     @yield('content')
     <section class="window-chat gradiente" id="myObject">
         <div>
-            <a href="javascript:void(3);" title="ir para fechar" alt="fechar"><img class="img-lazy-loading fechar"
-                    width="36px" height="36px" src="/assets/images/icons/icon-close.png"
-                    alt="Cerrado Consórcios e Seguros." title="fechar"></a>
+            <a href="javascript:void(3);" title="ir para fechar" alt="fechar"><img
+                    class="img-lazy-loading fechar" width="36px" height="36px"
+                    src="/assets/images/icons/icon-close.png" alt="Cerrado Consórcios e Seguros."
+                    title="fechar"></a>
         </div>
 
         <div class="conteudo">
@@ -1067,7 +1677,8 @@
 
                 <div class="item-chat shadow-sm">
                     <a href="https://www.facebook.com/profile.php?id=100077922125536" target="_blank"
-                        id="btn-menu-messenger" alt="Messenger" title="ir para Messenger" rel="noopener noreferrer">
+                        id="btn-menu-messenger" alt="Messenger" title="ir para Messenger"
+                        rel="noopener noreferrer">
                         <img class="img-lazy-loading" width="25px" height="25px"
                             src="/assets/images/icons/facebookmessenger.png"
                             alt="Resolva Aqui: Acesso rápido aos principais serviços e assistências para facilitar o seu dia-dia."
@@ -1165,8 +1776,8 @@
                     <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
                         <div class="mb-5">
                             <a alt="Nossos Seguros  - Clique para saber mais"
-                                title="Seguros Cerrado Seguros e Consórcios - Portfólio de Seguros" class="saiba-mais"
-                                role="link" href="/seguro">
+                                title="Seguros Cerrado Seguros e Consórcios - Portfólio de Seguros"
+                                class="saiba-mais" role="link" href="/seguro">
                                 <p class="title">Nossos Seguros</p>
                             </a>
                         </div>
@@ -1188,7 +1799,8 @@
                 <div class="row resumo-menu">
                     <div class="col-md-4">
                         <img loading="lazy" class="hidden-mobile" style="margin-left:10px;"
-                            src="/assets/images/logo/logo-light.png" style="" alt="" width="270">
+                            src="/assets/images/logo/logo-light.png" style="" alt=""
+                            width="270">
                     </div>
                     <div class="col-md-8">
                         <div class="row">
@@ -1233,8 +1845,8 @@
                         <div id="ver-mais" data-toggle="collapse" data-target="#demo" class="collapsed"
                             aria-expanded="false">
                             <p onclick="toggle(this)">ver mais</p> <img style="margin-left:10px;"
-                                src="/assets/images/icons/keyboard_arrow_down-24px.svg" alt="" height="8"
-                                width="5">
+                                src="/assets/images/icons/keyboard_arrow_down-24px.svg" alt=""
+                                height="8" width="5">
                         </div>
                         <hr>
                     </div>

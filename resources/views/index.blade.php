@@ -117,26 +117,33 @@
                                     src="/assets/images/icons/seta-slider.svg" />
 
                                 <div class="slider slider-nav">
+                                    @foreach ($categories_geral as $item)
+                                        <div class="card-banner">
+                                            <a draggable="false" href="{{ $item->link }}"
+                                                class="item-link-produto utm_cotacao" target=""
+                                                rel="noopener noreferrer" style="text-decoration: none;" role="button"
+                                                aria-expandedaria-label="Cotar Seguro Residencial"
+                                                alt="Seguro Residencial" title="Acessar Seguro Residencial">
 
-                                    <div class="card-banner">
-                                        <a draggable="false" href="/seguro" class="item-link-produto utm_cotacao"
-                                            target="" rel="noopener noreferrer" style="text-decoration: none;"
-                                            role="button" aria-expandedaria-label="Cotar Seguro Residencial"
-                                            alt="Seguro Residencial" title="Acessar Seguro Residencial">
+                                                <div class="card-nova-home">
+                                                    <div class="card-logo">
+                                                        <img class="icone" src="/assets/images/icons/Residencial.png"
+                                                            class="img-lazy-loading" src=""
+                                                            alt="Seguro Residencial"
+                                                            title="assets/icons/home/icon-seguro-residencial.svg">
+                                                    </div>
+                                                    <div>
+                                                        <h2 class="card-txt">{{ $item->name }}</h2>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
 
-                                            <div class="card-nova-home">
-                                                <div class="card-logo">
-                                                    <img class="icone" src="/assets/images/icons/Residencial.png"
-                                                        class="img-lazy-loading" src="" alt="Seguro Residencial"
-                                                        title="assets/icons/home/icon-seguro-residencial.svg">
-                                                </div>
-                                                <div>
-                                                    <h2 class="card-txt">Seguro Residencial</h2>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="card-banner">
+                                        //COLOCAR ICONES NAS CATEGORIAS
+                                    @endforeach
+
+
+                                    {{-- <div class="card-banner">
                                         <a draggable="false" href="/seguro" class="item-link-produto utm_cotacao"
                                             target="" rel="noopener noreferrer" style="text-decoration: none;"
                                             role="button" aria-expandedaria-label="Cotar Seguro Viagem"
@@ -280,7 +287,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
@@ -291,25 +298,28 @@
                                     src="/assets/images/icons/seta-slider.svg" />
 
                                 <div class="slider slider-nav">
+                                    @foreach ($categories_para_empresa as $item)
+                                        <div class="card-banner">
+                                            <a draggable="false" href="{{ $item->link }}" class="item-link-produto utm_cotacao"
+                                                target="" rel="noopener noreferrer" style="text-decoration: none;"
+                                                alt="Seguro Empresarial" title="Acessar Seguro Empresarial">
 
-                                    <div class="card-banner">
-                                        <a draggable="false" href="" class="item-link-produto utm_cotacao"
-                                            target="" rel="noopener noreferrer" style="text-decoration: none;"
-                                            alt="Seguro Empresarial" title="Acessar Seguro Empresarial">
+                                                <div class="card-nova-home">
+                                                    <div class="card-logo">
+                                                        <img class="icone" src="/assets/images/icons/Empresarial.png"
+                                                            class="img-lazy-loading" src=""
+                                                            alt="Seguro Empresarial" title="">
+                                                    </div>
+                                                    <div>
+                                                        <h2 class="card-txt">{{ $item->name }}</h2>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
 
-                                            <div class="card-nova-home">
-                                                <div class="card-logo">
-                                                    <img class="icone" src="/assets/images/icons/Empresarial.png"
-                                                        class="img-lazy-loading" src="" alt="Seguro Empresarial"
-                                                        title="">
-                                                </div>
-                                                <div>
-                                                    <h2 class="card-txt">Seguro Empresarial</h2>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="card-banner">
+
+                                    {{-- <div class="card-banner">
                                         <a draggable="false" href="" class="item-link-produto utm_cotacao"
                                             target="" rel="noopener noreferrer" style="text-decoration: none;"
                                             alt="Seguro Aluguel" title="Acessar Seguro Aluguel">
@@ -376,7 +386,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 

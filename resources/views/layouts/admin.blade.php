@@ -103,10 +103,10 @@
                                         <i class="ri-dashboard-2-line align-middle me-2 fs-18"></i><span
                                             class="align-middle">Painel</span>
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('blog.index') }}">
+                                    {{-- <a class="dropdown-item" href="{{ route('blog.index') }}">
                                         <i class="ri-news-line align-middle me-2 fs-18"></i><span
                                             class="align-middle">Blog</span>
-                                    </a>
+                                    </a> --}}
                                     <a class="dropdown-item" href="{{ route('product.index') }}">
                                         <i class="ri-box-3-fill align-middle me-2 fs-18"></i><span
                                             class="align-middle">Seguros</span>
@@ -115,10 +115,14 @@
                                         <i class="ri-book-shelf-fill align-middle me-2 fs-18"></i><span
                                             class="align-middle">Categorias</span>
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('leads.index') }}">
+                                    <a class="dropdown-item" href="{{ route('corretores.index') }}">
+                                        <i class="ri-user-fill align-middle me-2 fs-18"></i><span
+                                            class="align-middle">Corretores</span>
+                                    </a>
+                                    {{-- <a class="dropdown-item" href="{{ route('leads.index') }}">
                                         <i class="ri-group-fill align-middle me-2 fs-18"></i><span
                                             class="align-middle">Leads</span>
-                                    </a>
+                                    </a> --}}
 
 
                                     <div class="dropdown-divider my-1"></div>
@@ -295,7 +299,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link menu-arrow" href="#sidebarBlog" data-bs-toggle="collapse" role="button"
                             aria-expanded="false" aria-controls="sidebarBlog">
                             <span class="nav-icon">
@@ -316,7 +320,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li> <!-- end Pages Menu -->
+                    </li> <!-- end Pages Menu --> --}}
 
                     <li class="nav-item">
                         <a class="nav-link menu-arrow" href="#sidebarProducts" data-bs-toggle="collapse"
@@ -372,15 +376,15 @@
                         </div>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href={{ route('leads.index') }}>
                             <span class="nav-icon">
                                 <i class="ri-group-fill"></i>
                             </span>
                             <span class="nav-text">Leads</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a class="nav-link menu-arrow" href="#sidebarCustomers" data-bs-toggle="collapse"
                             role="button" aria-expanded="false" aria-controls="sidebarCustomers">
                             <span class="nav-icon">
@@ -393,6 +397,30 @@
                                 <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="{{ route('customers.index') }}">Ver todos os
                                         clientes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> --}}
+
+                    <li class="menu-title">Corretores</li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-arrow" href="#sidebarcorretores" data-bs-toggle="collapse"
+                            role="button" aria-expanded="false" aria-controls="sidebarcorretores">
+                            <span class="nav-icon">
+                                <i class="ri-user-fill"></i>
+                            </span>
+                            <span class="nav-text"> Corretores </span>
+                        </a>
+                        <div class="collapse" id="sidebarcorretores">
+                            <ul class="nav sub-navbar-nav">
+                                <li class="sub-nav-item">
+                                    <a class="sub-nav-link" href="{{ route('corretores.create') }}">Adicionar novo
+                                        corretor</a>
+                                </li>
+                                <li class="sub-nav-item">
+                                    <a class="sub-nav-link" href="{{ route('corretores.index') }}">Ver todos os
+                                        corretores</a>
                                 </li>
                             </ul>
                         </div>

@@ -10,7 +10,9 @@ class ProductsCategories extends Model
         'name',
         'main_image',
         'description',
-        'slug'
+        'slug',
+        'link',
+        'type'
     ];
 
 
@@ -22,5 +24,10 @@ class ProductsCategories extends Model
     public function analytics()
     {
         return $this->hasMany(Analytics::class, 'categorie_id', 'id');
+    }
+
+    public function comunicado()
+    {
+        return $this->hasOne(Comunicado::class, 'categorie_id');
     }
 }

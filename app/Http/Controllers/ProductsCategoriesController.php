@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comunicado;
 use Illuminate\Support\Str;
 use App\Models\ProductsCategories;
 use App\Services\AnalyticsService;
@@ -47,16 +48,39 @@ class ProductsCategoriesController extends Controller
                 $path = "/storage/media/categories/" . $filename;
             }
 
-            ProductsCategories::create([
+            if ($request->hasFile('icon_path')) {
+                $comunicadofile = $request->file('icon_path');
+                $comunicadoextension = $comunicadofile->getClientOriginalExtension();
+                $comunicadofilename = Str::random(40) . '.' . $comunicadoextension;
+
+                $comunicadofile->storeAs('media/categories/', $comunicadofilename, 'public');
+
+                $comunicadopath = "/storage/media/categories/" . $comunicadofilename;
+            } else {
+                $comunicadopath = "Nada enviado";
+            }
+
+            $categorie = ProductsCategories::create([
                 'name' => $request->name,
                 'description' => $request->description,
                 'main_image' => $path,
-                'slug' => Str::slug($request->name)
+                'slug' => Str::slug($request->name),
+                'type' => $request->type,
+                'link' => isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug,
+            ]);
+
+            Comunicado::create([
+                'name' => $request->comunicado_name,
+                'categorie_id' => $categorie->id,
+                'description' => $request->comunicado_description,
+                'icon_path' => $comunicadopath,
+                'link' => $request->comunicado_link,
+                'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
             ]);
 
             return redirect(route('categories.index'))->with('success', 'Categoria criada com sucesso!');
         } catch (Exception $e) {
-
+            dd($e);
             return redirect()->back()->with('error', 'Não conseguimos salvar sua categoria, tente novamente mais tarde.');
         }
 
@@ -103,16 +127,42 @@ class ProductsCategoriesController extends Controller
                 $path = $categorie->main_image;
             }
 
+            if ($request->hasFile('icon_path')) {
+                $comunicadofile = $request->file('icon_path');
+                $comunicadoextension = $comunicadofile->getClientOriginalExtension();
+                $comunicadofilename = Str::random(40) . '.' . $comunicadoextension;
+
+                $comunicadofile->storeAs('media/categories/', $comunicadofilename, 'public');
+
+                $comunicadopath = "/storage/media/categories/" . $comunicadofilename;
+            } else {
+                $comunicadopath = "Nada enviado";
+            }
+
+            $categorie->comunicado()->updateOrCreate(
+                ['categorie_id' => $categorie->id],
+                [
+                    'name' => $request->comunicado_name,
+                    'description' => $request->comunicado_description,
+                    'icon_path' => $comunicadopath,
+                    'link' => $request->comunicado_link,
+                    'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
+                ]
+            );
+
+
             $categorie->name = $request->name;
             $categorie->description = $request->description;
             $categorie->main_image = $path;
             $categorie->slug = Str::slug($request->name);
             $categorie->user_id = Auth::user()->id;
+            $categorie->type = $request->type;
+            $categorie->link = isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug;
             $categorie->save();
 
             return redirect(route('categories.index'))->with('success', 'Categoria atualizada com sucesso!');
         } catch (Exception $e) {
-
+            dd($e);
             return redirect()->back()->with('error', 'Não conseguimos atualizar sua categoria, tente novamente mais tarde.');
         }
 

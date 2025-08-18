@@ -69,6 +69,33 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
+                                            <label for="categorie_link" class="form-label" data-bs-toggle="tooltip"
+                                                data-bs-placement="right" data-bs-title="Descreva a categoria.">Link de
+                                                redirecionamento da categoria <span><i
+                                                        class='bx bx-question-mark'></i></span>
+                                            </label>
+                                            <div class="input-group">
+                                                <textarea id="categorie_link" name="categorie_link" class="editor-description form-control">{{ isset($categorie->link) ? $categorie->link : '' }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="categorie-type" class="form-label" data-bs-toggle="tooltip"
+                                                data-bs-placement="right" data-bs-title="Descreva a categoria.">Tipo de
+                                                seguro <span><i class='bx bx-question-mark'></i></span>
+                                            </label>
+                                            <div class="input-group">
+                                                <select name="type" id="type" class="form-control">
+                                                    <option value="">Selecione uma opção</option>
+                                                    <option
+                                                        {{ isset($categorie) && $categorie->type == 'seguro_geral' ? 'selected' : '' }}
+                                                        value="seguro_geral">Seguros Gerais (Para Você)</option>
+                                                    <option
+                                                        {{ isset($categorie) && $categorie->type == 'seguro_para_empresa' ? 'selected' : '' }}
+                                                        value="seguro_para_empresa">Seguros para Empresas</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
                                             <div class="row">
                                                 <div class="col-12 mb-3">
                                                     <label for="main_image" class="form-label" data-bs-toggle="tooltip"
@@ -96,6 +123,96 @@
 
                             </div>
                         </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Título do comunicado</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="name"><i
+                                                        class="ri-box-3-fill align-middle fs-18"></i></span>
+                                                <input type="text" class="form-control" id="name"
+                                                    aria-describedby="name" name="comunicado_name"
+                                                    placeholder="Nome da categoria"
+                                                    value="{{ isset($categorie) && isset($categorie->comunicado) ? $categorie->comunicado->name : '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="comunicado_description" class="form-label"
+                                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                                data-bs-title="Descreva a categoria.">Texto do
+                                                comunicado <span><i class='bx bx-question-mark'></i></span>
+                                            </label>
+                                            <div class="input-group">
+                                                <textarea id="comunicado_description" name="comunicado_description" class="editor-description form-control">{{ isset($categorie->comunicado->description) ? $categorie->comunicado->description : '' }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="comunicado_link" class="form-label" data-bs-toggle="tooltip"
+                                                data-bs-placement="right" data-bs-title="Descreva a categoria.">Link de
+                                                redirecionamento do comunicado <span><i
+                                                        class='bx bx-question-mark'></i></span>
+                                            </label>
+                                            <div class="input-group">
+                                                <textarea id="comunicado_link" name="comunicado_link" class="editor-description form-control">{{ isset($categorie->comunicado->link) ? $categorie->comunicado->link : '' }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label for="icon_path" class="form-label" data-bs-toggle="tooltip"
+                                                        data-bs-placement="right"
+                                                        data-bs-title="Imagem principal da categoria, irá aparecer nas páginas principais.">Ícone
+                                                        do comunicado<span><i class='bx bx-question-mark'></i></span>
+                                                    </label>
+                                                    <input type="file" name="icon_path" class="form-control"
+                                                        aria-label="file" accept="image/*">
+                                                </div>
+                                                @if (isset($categorie->comunicado->icon_path))
+                                                    <div class="col-12 col-lg-3 mb-3">
+                                                        <img src="{{ $categorie->comunicado->icon_path }}"
+                                                            alt="{{ $categorie->comunicado->title }}"
+                                                            class="img-fluid rounded">
+                                                    </div>
+                                                    <input type="hidden" name="icon_path_existing"
+                                                        value="{{ $categorie->comunicado->icon_path }}">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Visibilidade</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-2">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input me-2" type="checkbox"
+                                                                role="switch" id="flexSwitchCheckChecked"
+                                                                name="mostrar_comunicado"
+                                                                {{ isset($categorie->comunicado) && $categorie->comunicado->mostrar == 0 ? '' : 'checked' }}>
+                                                            <label class="form-check-label" for="flexSwitchCheckChecked"
+                                                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                                                data-bs-title="Marque essa opção para exibir o comunicado no site">Mostrar
+                                                                comunicado
+                                                                <span><i class='bx bx-question-mark'></i></span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        @if (isset($categorie))
+                            <input type="hidden" name="categorie_id" value="{{ $categorie->id }}">
+                        @endif
+
                     </form>
                     <div class="mb-3 rounded">
                         <div class="row justify-content-end g-2">

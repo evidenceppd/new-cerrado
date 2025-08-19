@@ -13,17 +13,18 @@ use Illuminate\Support\Facades\Route;
 //Páginas
 Route::get('/', [SiteController::class, 'index'])->name('index');
 Route::get('/sobre-nos', [SiteController::class, 'aboutUs'])->name('aboutUs');
-Route::get('/seguro', [SiteController::class, 'secureItem']);
+Route::get('/seguros', [SiteController::class, 'secureGeral']);
+Route::get('/seguros-empresas', [SiteController::class, 'secureEmpresa']);
 
 //Rotas públicas para produtos e single produtos
-Route::get('/produto/{slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/seguro/{slug}', [ProductController::class, 'show'])->name('product.show');
 
 //Rotas públicas para blog e single blog
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{url}', [PostController::class, 'show'])->name('blog.show');
 
 //Rotas de categoria
-Route::get('/categoria/{slug}', [ProductsCategoriesController::class, 'show'])->name('categories.show');
+Route::get('/seguros/{slug}', [ProductsCategoriesController::class, 'show'])->name('categories.show');
 
 //Rotas de cadastro de leads
 Route::post('/lead/cadastrar-download', [LeadController::class, 'registerDownload']);
@@ -50,15 +51,15 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::post('/blog/delete/{id}', [PostController::class, 'destroy'])->name('blog.delete');
 
 
-    Route::get('/produtos', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/produtos/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/produtos/create', [ProductController::class, 'store'])->name('product.store');
-    Route::get('/produtos/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
-    Route::post('/produtos/edit/{id}', [ProductController::class, 'update'])->name('product.update');
-    Route::post('/produtos/delete/{id}', [ProductController::class, 'destroy'])->name('product.delete');
-    Route::post('/produtos/create/upload-image-content', [ProductController::class, 'uploadImageContent'])->name('product.upload.image-content');
-    Route::post('/produtos/delete-image', [ProductController::class, 'deleteImage'])->name('image.delete');
-    Route::get('/procurar-produtos', [ProductController::class, 'search'])->name('product.search');
+    Route::get('/seguros', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/seguros/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/seguros/create', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/seguros/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/seguros/edit/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::post('/seguros/delete/{id}', [ProductController::class, 'destroy'])->name('product.delete');
+    Route::post('/seguros/create/upload-image-content', [ProductController::class, 'uploadImageContent'])->name('product.upload.image-content');
+    Route::post('/seguros/delete-image', [ProductController::class, 'deleteImage'])->name('image.delete');
+    Route::get('/procurar-seguros', [ProductController::class, 'search'])->name('product.search');
 
 
     Route::get('/categorias', [ProductsCategoriesController::class, 'index'])->name('categories.index');

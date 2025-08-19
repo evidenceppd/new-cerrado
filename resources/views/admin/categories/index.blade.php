@@ -77,7 +77,7 @@
                                     <thead class="bg-light-subtle">
                                         <tr>
                                             <th>Imagem e nome da categoria</th>
-                                            <th>Visualizações dá página (esse mês)</th>
+                                            {{-- <th>Visualizações dá página (esse mês)</th> --}}
                                             <th>Quantidade de Produtos</th>
                                             <th>Ações</th>
                                         </tr>
@@ -103,11 +103,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     <p class="mb-0"><i class="ri-eye-line"></i>
                                                         {{ $categorie->analytics->sum('views') }}
                                                     </p>
-                                                </td>
+                                                </td> --}}
                                                 <td>
                                                     <p class="mb-0">{{ $categorie->products->count() }}</p>
                                                 </td>

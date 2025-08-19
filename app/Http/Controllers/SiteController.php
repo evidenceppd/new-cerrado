@@ -19,6 +19,20 @@ class SiteController extends Controller
         return view('index', compact('request', 'posts'));
     }
 
+    public function secureGeral()
+    {
+        $categories_selecionada = ProductsCategories::where('type', 'seguro_geral')->get();
+
+        $type = "geral";
+        return view('categories', compact('categories_selecionada', 'type'));
+    }
+
+    public function secureEmpresa() {
+        $categories_selecionada = ProductsCategories::where('type', 'seguro_para_empresa')->get();
+        $type = "para_empresa";
+        return view('categories', compact('categories_selecionada', 'type'));
+    }
+
 
     public function blog(Request $request)
     {
@@ -26,8 +40,9 @@ class SiteController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->paginate(12);
         return view('blog', compact('posts'));
     }
-    
-    public function secureItem(Request $request){
+
+    public function secureItem(Request $request)
+    {
         return view('secure_item');
     }
 

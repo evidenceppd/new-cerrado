@@ -12,7 +12,6 @@ class Comunicado extends Model
         'description',
         'created_at',
         'updated_at',
-        'icon_path',
         'link',
         'mostrar'
     ];

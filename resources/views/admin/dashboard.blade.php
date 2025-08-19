@@ -145,7 +145,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($moreViewPosts as $index => $post)
+                                        @foreach ($moreViewSecures as $index => $post)
                                             <tr>
                                                 <td>
                                                     {{ ++$index }}°
@@ -160,8 +160,8 @@
                                                         </div>
                                                         <div
                                                             style="max-width: 100px; text-overflow:ellipsis; overflow: hidden;">
-                                                            <a href="{{ route('blog.show', $post->url) }}"
-                                                                class="text-dark fw-medium fs-15">{{ $post->title }}</a>
+                                                            <a href="{{ route('product.show', $post->slug) }}"
+                                                                class="text-dark fw-medium fs-15">{{ $post->name }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -169,11 +169,11 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex gap-2">
-                                                        <a href="{{ route('blog.show', $post->url) }}" target="_blank"
+                                                        <a href="{{ route('product.show', $post->slug) }}" target="_blank"
                                                             class="btn btn-light btn-sm"><iconify-icon
                                                                 icon="solar:eye-broken"
                                                                 class="align-middle fs-18"></iconify-icon></a>
-                                                        <a href="{{ route('blog.edit', $post->id) }}"
+                                                        <a href="{{ route('product.edit', $post->slug) }}"
                                                             class="btn btn-soft-primary btn-sm"><iconify-icon
                                                                 icon="solar:pen-2-broken"
                                                                 class="align-middle fs-18"></iconify-icon></a>

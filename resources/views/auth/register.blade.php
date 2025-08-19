@@ -10,7 +10,7 @@
             <div class="card-body px-3 py-4">
                 <div class="mx-auto mb-4 text-center auth-logo">
                     <a href="index.html" class="logo-dark">
-                        <img src="/assets_admin/images/logo.webp" height="100" class="img-fluid" alt="logo dark">
+                        <img src="/assets_admin/images/logo.png" height="100" class="img-fluid" alt="logo dark">
                     </a>
 
                     <a href="index.html" class="logo-light">

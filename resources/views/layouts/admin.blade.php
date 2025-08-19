@@ -91,7 +91,7 @@
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="d-flex align-items-center">
                                         <img class="rounded-circle" width="32"
-                                            src="/assets_admin/images/users/avatar-1.jpg" alt="avatar-3">
+                                            src="/assets_admin/images/users/avatar.ico" alt="avatar-3">
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -269,11 +269,11 @@
                         <div class="relative h-8 w-8" style="width: 2rem; position: relative;">
                             <div style="position: absolute;width: 2rem;top: -50%;transform: translateY(-50%);display: flex;justify-content: center;"
                                 class="inset-0 flex items-center justify-center"><img
-                                    src="/assets_admin/images/logo-icon.png" class="img-fluid" alt="">
+                                    src="/assets_admin/images/logo-icon.ico" class="img-fluid" alt="">
                             </div>
                         </div>
                         <div class="text-lg font-bold text-white" style="font-size: 1.125rem; font-weight: 700">
-                            <span>Agência Evidence</span>
+                            <span>Cerrado Consórcios</span>
                         </div>
                     </div>
                 </div>

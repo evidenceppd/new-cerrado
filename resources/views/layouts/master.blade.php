@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <!-- jQuery -->
-    <script type="text/javascript"
+    {{-- <script type="text/javascript"
         src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=puqJuXzmFyT622ShNo9XFvgJ3PMUJ54Ib4x2Q-WfGGqJEgye8hXk-pIl6nbt2ckUY8su890CfDAX4w0Lu8752qA8Bx1Ik4kuZm-qxjY_aX3lyePdNsWNzSr1OptZ9R89Z383XdFnFkTqN4aKLDusJ5hLq5Ryk33usKO1SfCipTK0B0o-jvdURniyuE-xVw3gFm6UR2mgpStOGbixRyF8c-FGui8pMawsp5gyIi6-ltx3puzW8HmGcKVwM-pyMaJ4DTfbI1XdcFRe73o2g5wg2j3v1dKGUqMNFQ_orSnKFgvNHBTAV1BYrPzFqP9Moxv-8xh7go9aGE8Ne_L_SmXKsLR0oxZtQceMf41ZE8jAHkClwI3c6XKyhA1GOCTdGZ0WxEzpMnbCzFh3UM7zmL-4VA-EFqspfdseI33c_nG4rBTH8_AKVCaQFEQ6WPCsskqsESSQT5bXygcyo97jsvbTVz0UnwvIwM1-JmqZu_rmYp1aytPAh3GgbjuwL__ayKAnho6jp3kBE68NX2HJ8rX8sNDjKQxJsBkxNMRDaz2DBRjr8PEUovcadq_1cqcbhaqNZRGnF1GpDb6AHVIL4oQifVlBIPUjlBtTer6gz6rpdjhSD-F5qQXuF98xObSj8RNUHr7vaKXh5JKltzYwYsXqSXKs-MjPMXCDNXup0Ya3J1beWvudbYXNNKa38Jhgt9LOTXzTrlhNYPqpwZp85Q-HaJOKsgYXmgOYVVz6yo_WWiEmBZiMeoCmrB9RV_YS3aydBnUREvfoM1iaeuPIbnB3fpvNieaMYpUOADDnB3AaEHXoQzpqP-9AZBQviMQ9To6PSZGg_wmHUADaSLkEI33gnXCs4IqDk_n5H2sLUPse33s"
-        charset="UTF-8"></script>
+        charset="UTF-8"></script> --}}
     <script rel="preconnect" src="/assets/js/theme-jquery.min.js"></script>
 
     <!-- Favicon -->
@@ -168,15 +168,16 @@
                                             <li class="acesso-parceiros-lista">
                                                 <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
                                                     alt="Clique para ver">
-                                                <a href="{{ $categorie->link }}" class="dropdown-item" aria-label="{{ $categorie->name }}"
+                                                <a href="{{ $categorie->link }}" class="dropdown-item"
+                                                    aria-label="{{ $categorie->name }}"
                                                     rel="noopener noreferrer">{{ $categorie->name }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
                                 </li>
-                            </ul> 
+                            </ul>
                         </div>
-                    </li> 
+                    </li>
                     <li class="dropdownMenu">
                         <a href="javascript:void(14)" class="novo-btn-area-do-corretor" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" role="button" aria-label="Parceiros"
@@ -280,7 +281,7 @@
         </nav>
     </header>
     <nav class="menu fixed">
-        <div class="search-bar">
+        {{-- <div class="search-bar">
             <div class="container">
                 <form action="/" method="get">
                     <button type="button" id="close-search-bar" class="btn">
@@ -302,7 +303,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
 
         <div class="container-fluid">
             <div class="header-navbar">
@@ -339,7 +340,7 @@
                         </div>
 
                         <ul class="cd-dropdown-content">
-                            <li class="item-search">
+                            {{-- <li class="item-search">
                                 <form class="cd-search" action="/" method="get">
                                     <div class="input-group">
                                         <input type="search" name="s" placeholder="Pesquisar..."
@@ -352,36 +353,44 @@
                                         </span>
                                     </div>
                                 </form>
-                            </li>
+                            </li> --}}
                             <li id="menu-item-41621"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41621"><a
                                     href="/"
                                     title="Seguros de Afinidades &#8211; Clique para acessar">Início</a></li>
                             <li id="menu-item-41523"
                                 class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41523">
-                                <a href=""
+                                <a href="/seguros"
                                     title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros</a>
                                 <div class="sub-menu-open"></div>
                                 <ul class="sub-menu">
-                                    <li class="menu-item menu-item-has-children">
-                                        <a title="assets/icons/common/menu/viagens/icon-menu-viagem2.svg">
-                                            Seguros Viagem
-                                        </a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item">
-                                                <a href="/seguro">Seguro Viagem Nacional</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="/seguro">Seguro Viagem Internacional</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="/seguro">Cotação Seguro Viagem</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    @foreach ($categories_geral as $item)
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="{{ $item->link }}"
+                                                title="assets/icons/common/menu/viagens/icon-menu-viagem2.svg">
+                                                {{ $item->name }}
+                                            </a>
+                                            <div class="sub-menu-open"></div>
+                                            <ul class="sub-menu">
+                                                @foreach ($item->products as $productitem)
+                                                    <li class="menu-item">
+                                                        <a
+                                                            href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
+                                                    </li>
+                                                @endforeach
 
-                                    <li class="menu-item menu-item-has-children">
+                                                {{-- <li class="menu-item">
+                                                    <a href="/seguro">Seguro Viagem Internacional</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="/seguro">Cotação Seguro Viagem</a>
+                                                </li> --}}
+                                            </ul>
+                                        </li>
+                                    @endforeach
+
+
+                                    {{-- <li class="menu-item menu-item-has-children">
                                         <a href="/seguro">Seguros de Automóveis</a>
                                         <div class="sub-menu-open"></div>
                                         <ul class="sub-menu">
@@ -427,389 +436,25 @@
                                             <li class="menu-item"><a href="/seguro">Seguro de Acidentes Pessoais
                                                     Estagiário</a></li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
-                            <li id="menu-item-41550"
-                                class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41550">
-                                <a href="/seguro/#empresa"
-                                    title="Seguros para a sua Empresa &#8211; Clique para conhecer nossas opções">Consórcios</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41552"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41552">
-                                        <a href="/seguro">Seguros Empresariais</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                <a href="/seguro">Seguro Empresarial</a>
+                            @foreach ($categories_para_empresa as $item)
+                                <li id="menu-item-41550"
+                                    class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41550">
+                                    <a href="/seguros-empresas"
+                                        title="Seguros para a sua Empresa &#8211; Clique para conhecer nossas opções">{{ $item->name }}</a>
+                                    <div class="sub-menu-open"></div>
+                                    <ul class="sub-menu">
+                                        @foreach ($item->products as $productitem)
+                                            <li class="menu-item">
+                                                <a
+                                                    href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
                                             </li>
-                                            <li id="menu-item-41555"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41555">
-                                                <a href="/seguro">Seguro Garantia</a>
-                                            </li>
-                                            <li id="menu-item-41558"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41558">
-                                                <a href="/seguro">Seguro Riscos Cibernéticos</a>
-                                            </li>
-                                            <li id="menu-item-41556"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41556">
-                                                <a href="/seguro">Seguro Transportes</a>
-                                            </li>
-                                            <li id="menu-item-41554"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41554">
-                                                <a href="/seguro">Seguro Auto Frota</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-41592"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41592">
-                                        <a href="/seguro">Seguros Patrimoniais</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-53352"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53352">
-                                                <a href="/seguro">Seguro Energia Sustentável</a>
-                                            </li>
-                                            <li id="menu-item-41557"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41557">
-                                                <a href="/seguro">Seguro Equipamentos</a>
-                                            </li>
-                                            <li id="menu-item-41593"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41593">
-                                                <a href="/seguro">Seguro Riscos de Engenharia e Responsabilidade Civil
-                                                    Obras</a>
-                                            </li>
-                                            <li id="menu-item-41599"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41599">
-                                                <a href="/seguro">Seguro Valores</a>
-                                            </li>
-                                            <li id="menu-item-41594"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41594">
-                                                <a href="/seguro">Seguro Riscos Nomeados e Operacionais</a>
-                                            </li>
-                                            <li id="menu-item-41597"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41597">
-                                                <a href="/seguro">Seguro Obras de Artes</a>
-                                            </li>
-                                            <li id="menu-item-41595"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41595">
-                                                <a href="/seguro">Seguro Riscos de Petróleo</a>
-                                            </li>
-                                            <li id="menu-item-41598"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41598">
-                                                <a href="/seguro">Seguro Roubo</a>
-                                            </li>
-                                            <li id="menu-item-41591"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41591">
-                                                <a href="/seguro">Seguro Construtor Naval</a>
-                                            </li>
-                                            <li id="menu-item-41590"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41590">
-                                                <a href="/seguro">Seguro Operador Portuário</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li id="menu-item-41560"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41560">
-                                        <a href="/seguro">Seguros de Vida para Empresas</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-41574"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41574">
-                                                <a href="/seguro">Seguro Acidentes Pessoais Passageiros</a>
-                                            </li>
-                                            <li id="menu-item-41564"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41564">
-                                                <a href="/seguro">Seguro Prestamista</a>
-                                            </li>
-                                            <li id="menu-item-41565"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41565">
-                                                <a href="/seguro">Seguro Simples Vida – VG Capital Global</a>
-                                            </li>
-                                            <li id="menu-item-41572"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41572">
-                                                <a href="/seguro">Seguro Acidentes Pessoais Escolar</a>
-                                            </li>
-                                            <li id="menu-item-41562"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41562">
-                                                <a href="/seguro">Seguro Vida em Grupo</a>
-                                            </li>
-                                            <li id="menu-item-41575"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41575">
-                                                <a href="/seguro">Seguro Acidentes Pessoais Assistur</a>
-                                            </li>
-                                            <li id="menu-item-41563"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41563">
-                                                <a href="/seguro">Seguro Vida em Grupo – PME</a>
-                                            </li>
-                                            <li id="menu-item-41571"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41571">
-                                                <a href="/seguro">Seguro Acidentes Pessoais Coletivo</a>
-                                            </li>
-                                            <li id="menu-item-41567"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41567">
-                                                <a href="/seguro">Seguro Simples Vida – AP Capital Global</a>
-                                            </li>
-                                            <li id="menu-item-41569"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41569">
-                                                <a href="/seguro">Seguro Vida Convenções Coletivas</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-41579"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41579">
-                                        <a href="/seguro">Seguros para Imóveis</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-41580"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41580">
-                                                <a href="/seguro">Seguro Condomínio</a>
-                                            </li>
-                                            <li id="menu-item-41581"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41581">
-                                                <a href="/seguro">Seguro Fiança Locatícia – Aluguel</a>
-                                            </li>
-                                            <li id="menu-item-41582"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41582">
-                                                <a href="/seguro">Seguro Imobiliário</a>
-                                            </li>
-                                            <li id="menu-item-41583"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41583">
-                                                <a href="/seguro">Seguro Habitacional</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-41586"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41586">
-                                        <a href="/seguro">Seguros para Agronegócios</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-41588"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41588">
-                                                <a href="/seguro">Seguro Agro Fazendas</a>
-                                            </li>
-                                            <li id="menu-item-41587"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41587">
-                                                <a href="/seguro">Seguro Agro Safras</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-41600"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41600">
-                                        <a href="/seguro">Seguros de Responsabilidade Civil</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-41603"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41603">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Prestação de Serviços
-                                                    em Locais de Terceiros</a>
-                                            </li>
-                                            <li id="menu-item-41601"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41601">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Geral</a>
-                                            </li>
-                                            <li id="menu-item-41605"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41605">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Profissional – E&O</a>
-                                            </li>
-                                            <li id="menu-item-41606"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41606">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Ambiental – Transporte
-                                                    Terrestre Rodoviário</a>
-                                            </li>
-                                            <li id="menu-item-51669"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51669">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Ambiental – Instalações
-                                                    em Empresas Fixas</a>
-                                            </li>
-                                            <li id="menu-item-41604"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41604">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Executivos Directors
-                                                    and Officers- D&O</a>
-                                            </li>
-                                            <li id="menu-item-41602"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41602">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Eventos e
-                                                    Exposições</a>
-                                            </li>
-                                            <li id="menu-item-55807"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55807">
-                                                <a href="/seguro">Seguro Responsabilidade Civil Filmes</a>
-                                            </li>
-                                            <li id="menu-item-41585"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41585">
-                                                <a href="/seguro">Seguro Aeronáutico – RETA (Responsabilidade
-                                                    Explorador ou Transportador Aéreo)</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-41596"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41596">
-                                        <a href="#">Gestão</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-41559"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41559">
-                                                <a href="/seguro"
-                                                    title="Gerenciamento de Risco &#8211; Clique para conhecer">Gerenciamento
-                                                    de Risco</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-41560"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41560">
-                                <a href="/seguro">Seguros de Vida para Empresas</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41574"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41574">
-                                        <a href="/seguro">Seguro Acidentes Pessoais Passageiros</a>
-                                    </li>
-                                    <li id="menu-item-41564"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41564">
-                                        <a href="/seguro">Seguro Prestamista</a>
-                                    </li>
-                                    <li id="menu-item-41565"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41565">
-                                        <a href="/seguro">Seguro Simples Vida – VG Capital Global</a>
-                                    </li>
-                                    <li id="menu-item-41572"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41572">
-                                        <a href="/seguro">Seguro Acidentes Pessoais Escolar</a>
-                                    </li>
-                                    <li id="menu-item-41562"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41562">
-                                        <a href="/seguro">Seguro Vida em Grupo</a>
-                                    </li>
-                                    <li id="menu-item-41575"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41575">
-                                        <a href="/seguro">Seguro Acidentes Pessoais Assistur</a>
-                                    </li>
-                                    <li id="menu-item-41563"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41563">
-                                        <a href="/seguro">Seguro Vida em Grupo – PME</a>
-                                    </li>
-                                    <li id="menu-item-41571"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41571">
-                                        <a href="/seguro">Seguro Acidentes Pessoais Coletivo</a>
-                                    </li>
-                                    <li id="menu-item-41567"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41567">
-                                        <a href="/seguro">Seguro Simples Vida – AP Capital Global</a>
-                                    </li>
-                                    <li id="menu-item-41569"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41569">
-                                        <a href="/seguro">Seguro Vida Convenções Coletivas</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-41579"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41579">
-                                <a href="/seguro">Seguros para Imóveis</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41580"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41580">
-                                        <a href="/seguro">Seguro Condomínio</a>
-                                    </li>
-                                    <li id="menu-item-41581"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41581">
-                                        <a href="/seguro">Seguro Fiança Locatícia – Aluguel</a>
-                                    </li>
-                                    <li id="menu-item-41582"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41582">
-                                        <a href="/seguro">Seguro Imobiliário</a>
-                                    </li>
-                                    <li id="menu-item-41583"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41583">
-                                        <a href="/seguro">Seguro Habitacional</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-41586"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41586">
-                                <a href="/seguro">Seguros para Agronegócios</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41588"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41588">
-                                        <a href="/seguro">Seguro Agro Fazendas</a>
-                                    </li>
-                                    <li id="menu-item-41587"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41587">
-                                        <a href="/seguro">Seguro Agro Safras</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-41600"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41600">
-                                <a href="/seguro">Seguros de Responsabilidade Civil</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41603"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41603">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Prestação de Serviços
-                                            em Locais de Terceiros</a>
-                                    </li>
-                                    <li id="menu-item-41601"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41601">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Geral</a>
-                                    </li>
-                                    <li id="menu-item-41605"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41605">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Profissional – E&O</a>
-                                    </li>
-                                    <li id="menu-item-41606"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41606">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Ambiental – Transporte
-                                            Terrestre Rodoviário</a>
-                                    </li>
-                                    <li id="menu-item-51669"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51669">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Ambiental – Instalações
-                                            em Empresas Fixas</a>
-                                    </li>
-                                    <li id="menu-item-41604"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41604">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Executivos Directors
-                                            and Officers- D&O</a>
-                                    </li>
-                                    <li id="menu-item-41602"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41602">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Eventos e
-                                            Exposições</a>
-                                    </li>
-                                    <li id="menu-item-55807"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55807">
-                                        <a href="/seguro">Seguro Responsabilidade Civil Filmes</a>
-                                    </li>
-                                    <li id="menu-item-41585"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41585">
-                                        <a href="/seguro">Seguro Aeronáutico – RETA (Responsabilidade
-                                            Explorador ou Transportador Aéreo)</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-41596"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41596">
-                                <a href="#">Gestão</a>
-                                <div class="sub-menu-open"></div>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-41559"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41559">
-                                        <a href="/seguro"
-                                            title="Gerenciamento de Risco &#8211; Clique para conhecer">Gerenciamento
-                                            de Risco</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        </li>
-
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -817,15 +462,14 @@
                 <div class="desktop">
                     <ul class="nav navbar-nav navbar-right">
                         <li style="display: flex;" class="no-children">
-                            <a class="nav-item" href="/" title="Ir para Afinidades"
-                                id="btn-menu-afinidades">
+                            <a class="nav-item" href="/" title="Ir para Afinidades" id="btn-menu-afinidades">
                                 Início </a>
                         </li>
                         <li class="has-children full-menu">
                             <div class="cd-dropdown-wrapper">
                                 <a class="cd-dropdown-trigger" id="para-voce-2"
                                     title="Voltar ao início do site. Clique aqui para voltar a página home"
-                                    href="/seguro/#para-voce" data-menu-items-target="menuItems-para-voce-2"
+                                    href="/seguros" data-menu-items-target="menuItems-para-voce-2"
                                     data-submenu-full-width="true">
                                     Seguros </a>
 
@@ -840,7 +484,7 @@
                         <li class="has-children full-menu">
                             <div class="cd-dropdown-wrapper">
                                 <a class="cd-dropdown-trigger" id="para-a-sua-empresa-2"
-                                    title="clique para ver mais no menu Para a sua Empresa" href="/seguro/#empresa"
+                                    title="clique para ver mais no menu Para a sua Empresa" href="/seguros-empresas"
                                     data-menu-items-target="menuItems-para-a-sua-empresa-2"
                                     data-submenu-full-width="true">
                                     Para a sua Empresa </a>
@@ -857,7 +501,7 @@
                         <li class="has-children full-menu">
                             <div class="cd-dropdown-wrapper">
                                 <a class="cd-dropdown-trigger" id="para-a-sua-empresa-2"
-                                    title="clique para ver mais no menu Para a sua Empresa" href="/seguro/#empresa"
+                                    title="clique para ver mais no menu Para a sua Empresa" href="/seguros-empresa"
                                     data-menu-items-target="menuItems-para-a-sua-empresa-2"
                                     data-submenu-full-width="true">
                                     Consócios </a>
@@ -872,14 +516,14 @@
                             </div>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <button type="button" id="open-search-bar" role="search" class="btn btn-primary"
                                 style="width: 50px;padding: 6px 12px;outline: none !important;">
                                 <img data-src="https://www.tokiomarine.com.br/wp-content/themes/tokiomarine/images/icons/common"
                                     src="/assets/images/icons/lupa.svg" alt="Abrir caixa de busca" title="buscar"
                                     width="20px" height="20px">
                             </button>
-                        </li>
+                        </li> --}}
                         <li id="contact-li-menu">
                             <a target="_blank" href="https://wa.me/556434130555">
                                 <div>
@@ -925,23 +569,28 @@
                                 <ul class="submenu-items">
                                     @foreach ($item->products as $product_item)
                                         <li class="submenu-item">
-                                            <a class="link" href="/seguro"
+                                            <a class="link" href="/seguro/{{ $product_item->slug }}"
                                                 title="Ir para {{ $product_item->name }}">
                                                 {{ $product_item->name }}
                                             </a>
                                         </li>
                                     @endforeach
                                 </ul>
-                                @if (isset($item->comunicado) && $item->comunicado->mostrar == 1)
+                                @if (isset($item->comunicado) &&
+                                        isset($item->comunicado->name) &&
+                                        isset($item->comunicado->description) &&
+                                        $item->comunicado->mostrar == 1)
                                     <div class="wrapper-comunicado">
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            <img class="icone"
-                                                style="{{ $item->comunicado->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                src="{{ $item->comunicado->icon_path }}"
-                                                alt="{{ $item->comunicado->name }}"
-                                                title="{{ $item->comunicado->name }}">
+                                            @if ($item->icon_path != 'Nada enviado')
+                                                <img class="icone"
+                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
+                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
+                                                    title="{{ $item->comunicado->name }}">
+                                            @endif
+
 
                                             <p class="title">{{ $item->comunicado->name }}</p>
                                             <p class="text">{{ $item->comunicado->description }}</p>
@@ -982,7 +631,7 @@
                                 <ul class="submenu-items">
                                     @foreach ($item->products as $product_item)
                                         <li class="submenu-item">
-                                            <a class="link" href="/seguro"
+                                            <a class="link" href="/seguro/{{ $product_item->slug }}"
                                                 title="Ir para {{ $product_item->name }}">
                                                 {{ $product_item->name }}
                                             </a>
@@ -994,11 +643,12 @@
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            <img class="icone"
-                                                style="{{ $item->comunicado->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                src="{{ $item->comunicado->icon_path }}"
-                                                alt="{{ $item->comunicado->name }}"
-                                                title="{{ $item->comunicado->name }}">
+                                            @if ($item->icon_path != 'Nada enviado')
+                                                <img class="icone"
+                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
+                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
+                                                    title="{{ $item->comunicado->name }}">
+                                            @endif
 
                                             <p class="title">{{ $item->comunicado->name }}</p>
                                             <p class="text">{{ $item->comunicado->description }}</p>
@@ -1134,7 +784,7 @@
     <footer class="footer" role="contentinfo">
         <section class="sub-menu-footer">
             <div class="container">
-                <div class="row justify-content-center">
+                {{-- <div class="row justify-content-center">
                     <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
                         <div class="mb-5">
                             <a alt="Condições Gerais dos Seguros - Clique para saber mais"
@@ -1180,7 +830,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </section>
         <aside class="widget-area" role="complementary">
@@ -1193,33 +843,20 @@
                     <div class="col-md-8">
                         <div class="row">
 
-                            <div class="col-md-3 col-xs-6 mt-4">
-                                <a href="/seguro" role="link">Área
-                                    do
-                                    Cliente</a>
-                                <br><br>
-                                <a href="/seguro" role="link">Sustentabilidade
-                                    ESG</a>
-                            </div>
+
 
                             <div class="col-md-3 col-xs-6 mt-4">
-                                <a href="/seguro" role="link">Área do Corretor</a>
-                                <br><br>
-                                <a href="/seguro" role="link">Blog</a>
-                            </div>
-
-                            <div class="col-md-3 col-xs-6 mt-4">
-                                <a href="/seguro" role="link">Canais
+                                <a target="_blank" href="https://linktr.ee/cerradoconsorcio" role="link">Canais
                                     Digitais</a>
                                 <br><br>
-                                <a href="/seguro" role="link">Telefones
-                                    Úteis</a>
+                                <a target="_blank" href="https://wa.me/556434130555" role="link">Fale Conosco /
+                                    SAC</a>
                             </div>
 
                             <div class="col-md-3 col-xs-6 mt-4">
-                                <a href="/seguro" role="link">Fale Conosco /
-                                    SAC</a>
+                                <a href="/seguros" role="link">Nossos seguros para você</a>
                                 <br><br>
+                                <a href="/seguros-empresas" role="link">Nossos seguros para a sua empresa</a>
                             </div>
                         </div>
                     </div>
@@ -1232,15 +869,13 @@
                     <div class="ver-mais-open-menu">
                         <div id="ver-mais" data-toggle="collapse" data-target="#demo" class="collapsed"
                             aria-expanded="false">
-                            <p onclick="toggle(this)">ver mais</p> <img style="margin-left:10px;"
-                                src="/assets/images/icons/keyboard_arrow_down-24px.svg" alt="" height="8"
-                                width="5">
+
                         </div>
                         <hr>
                     </div>
                 </div>
             </div>
-            <section class="menu-colapse">
+            {{-- <section class="menu-colapse">
                 <div class="container collapse" id="demo" aria-expanded="true" style="height: 0px;">
                     <div class="row">
                         <div class="col-xs-12 col-sm-3 widget-1">
@@ -1331,7 +966,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </aside>
         <aside class="widget-mobile">
             <div class="container">
@@ -1356,6 +991,7 @@
                     <div class="col-xs-12 col-sm-6 cnpj ">
                         <p> © Cerrado Consórcios e Seguros 2025 - Todos os direitos reservados.</p>
                         <p> CNPJ 33.164.021/0001-00</p>
+                        <p> Desenvolvido por <a href="https://agenciaevidence.com.br">Agência Evidence</a></p>
                     </div>
                 </div>
             </div>

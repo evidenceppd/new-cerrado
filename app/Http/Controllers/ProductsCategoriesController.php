@@ -49,15 +49,15 @@ class ProductsCategoriesController extends Controller
             }
 
             if ($request->hasFile('icon_path')) {
-                $comunicadofile = $request->file('icon_path');
-                $comunicadoextension = $comunicadofile->getClientOriginalExtension();
-                $comunicadofilename = Str::random(40) . '.' . $comunicadoextension;
+                $iconfile = $request->file('icon_path');
+                $iconextension = $iconfile->getClientOriginalExtension();
+                $iconfilename = Str::random(40) . '.' . $iconextension;
 
-                $comunicadofile->storeAs('media/categories/', $comunicadofilename, 'public');
+                $iconfile->storeAs('media/categories/', $iconfilename, 'public');
 
-                $comunicadopath = "/storage/media/categories/" . $comunicadofilename;
+                $iconpath = "/storage/media/categories/" . $iconfilename;
             } else {
-                $comunicadopath = "Nada enviado";
+                $iconpath = "Nada enviado";
             }
 
             $categorie = ProductsCategories::create([
@@ -65,6 +65,7 @@ class ProductsCategoriesController extends Controller
                 'description' => $request->description,
                 'main_image' => $path,
                 'slug' => Str::slug($request->name),
+                'icon_path' => $iconpath,
                 'type' => $request->type,
                 'link' => isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug,
             ]);
@@ -73,7 +74,6 @@ class ProductsCategoriesController extends Controller
                 'name' => $request->comunicado_name,
                 'categorie_id' => $categorie->id,
                 'description' => $request->comunicado_description,
-                'icon_path' => $comunicadopath,
                 'link' => $request->comunicado_link,
                 'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
             ]);
@@ -128,15 +128,15 @@ class ProductsCategoriesController extends Controller
             }
 
             if ($request->hasFile('icon_path')) {
-                $comunicadofile = $request->file('icon_path');
-                $comunicadoextension = $comunicadofile->getClientOriginalExtension();
-                $comunicadofilename = Str::random(40) . '.' . $comunicadoextension;
+                $iconfile = $request->file('icon_path');
+                $iconextension = $iconfile->getClientOriginalExtension();
+                $iconfilename = Str::random(40) . '.' . $iconextension;
 
-                $comunicadofile->storeAs('media/categories/', $comunicadofilename, 'public');
+                $iconfile->storeAs('media/categories/', $iconfilename, 'public');
 
-                $comunicadopath = "/storage/media/categories/" . $comunicadofilename;
+                $iconpath = "/storage/media/categories/" . $iconfilename;
             } else {
-                $comunicadopath = "Nada enviado";
+                $iconpath = $categorie->icon_path;
             }
 
             $categorie->comunicado()->updateOrCreate(
@@ -144,7 +144,6 @@ class ProductsCategoriesController extends Controller
                 [
                     'name' => $request->comunicado_name,
                     'description' => $request->comunicado_description,
-                    'icon_path' => $comunicadopath,
                     'link' => $request->comunicado_link,
                     'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
                 ]
@@ -157,6 +156,7 @@ class ProductsCategoriesController extends Controller
             $categorie->slug = Str::slug($request->name);
             $categorie->user_id = Auth::user()->id;
             $categorie->type = $request->type;
+            $categorie->icon_path = $iconpath;
             $categorie->link = isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug;
             $categorie->save();
 

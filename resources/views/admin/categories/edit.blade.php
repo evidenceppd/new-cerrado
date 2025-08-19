@@ -60,7 +60,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="description" class="form-label" data-bs-toggle="tooltip"
-                                                data-bs-placement="right" data-bs-title="Descreva a categoria.">Descrição
+                                                data-bs-placement="right"
+                                                data-bs-title="Descreva brevemente essa categoria de seguro..">Descrição
                                                 da
                                                 categoria<span><i class='bx bx-question-mark'></i></span>
                                             </label>
@@ -68,7 +69,7 @@
                                                 <textarea id="description" name="description" class="editor-description form-control">{{ isset($categorie->description) ? $categorie->description : '' }}</textarea>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
+                                        {{-- <div class="mb-3">
                                             <label for="categorie_link" class="form-label" data-bs-toggle="tooltip"
                                                 data-bs-placement="right" data-bs-title="Descreva a categoria.">Link de
                                                 redirecionamento da categoria <span><i
@@ -77,10 +78,12 @@
                                             <div class="input-group">
                                                 <textarea id="categorie_link" name="categorie_link" class="editor-description form-control">{{ isset($categorie->link) ? $categorie->link : '' }}</textarea>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="mb-3">
                                             <label for="categorie-type" class="form-label" data-bs-toggle="tooltip"
-                                                data-bs-placement="right" data-bs-title="Descreva a categoria.">Tipo de
+                                                data-bs-placement="right"
+                                                data-bs-title="Diferencia em qual aba do site a categoria será exibida, sendo 'seguros para você', ou 'seguros para a sua empresa'.">Tipo
+                                                de
                                                 seguro <span><i class='bx bx-question-mark'></i></span>
                                             </label>
                                             <div class="input-group">
@@ -120,7 +123,27 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <label for="icon_path" class="form-label" data-bs-toggle="tooltip"
+                                                data-bs-placement="right"
+                                                data-bs-title="Imagem principal da categoria, irá aparecer nas páginas principais.">Ícone
+                                                do seguro<span><i class='bx bx-question-mark'></i></span>
+                                            </label>
+                                            <input type="file" name="icon_path" class="form-control" aria-label="file"
+                                                accept="image/*" {{ isset($categorie->icon_path) ? '' : 'required=""' }}>
+                                        </div>
+                                        @if (isset($categorie->icon_path))
+                                            <div class="col-12 col-lg-3 mb-3">
+                                                <img src="{{ $categorie->icon_path }}" alt="{{ $categorie->title }}"
+                                                    class="img-fluid rounded">
+                                            </div>
+                                            <input type="hidden" name="icon_path_existing"
+                                                value="{{ $categorie->icon_path }}">
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -157,28 +180,6 @@
                                             </label>
                                             <div class="input-group">
                                                 <textarea id="comunicado_link" name="comunicado_link" class="editor-description form-control">{{ isset($categorie->comunicado->link) ? $categorie->comunicado->link : '' }}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="row">
-                                                <div class="col-12 mb-3">
-                                                    <label for="icon_path" class="form-label" data-bs-toggle="tooltip"
-                                                        data-bs-placement="right"
-                                                        data-bs-title="Imagem principal da categoria, irá aparecer nas páginas principais.">Ícone
-                                                        do comunicado<span><i class='bx bx-question-mark'></i></span>
-                                                    </label>
-                                                    <input type="file" name="icon_path" class="form-control"
-                                                        aria-label="file" accept="image/*">
-                                                </div>
-                                                @if (isset($categorie->comunicado->icon_path))
-                                                    <div class="col-12 col-lg-3 mb-3">
-                                                        <img src="{{ $categorie->comunicado->icon_path }}"
-                                                            alt="{{ $categorie->comunicado->title }}"
-                                                            class="img-fluid rounded">
-                                                    </div>
-                                                    <input type="hidden" name="icon_path_existing"
-                                                        value="{{ $categorie->comunicado->icon_path }}">
-                                                @endif
                                             </div>
                                         </div>
                                         <div class="card">
@@ -237,7 +238,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="/assets_admin/vendor/jodit/jodit.min.js"></script>
-
 
     <script>
         $(document).ready(function() {

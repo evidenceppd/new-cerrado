@@ -122,15 +122,18 @@
                                             <a draggable="false" href="{{ $item->link }}"
                                                 class="item-link-produto utm_cotacao" target=""
                                                 rel="noopener noreferrer" style="text-decoration: none;" role="button"
-                                                aria-expandedaria-label="Cotar Seguro Residencial"
-                                                alt="Seguro Residencial" title="Acessar Seguro Residencial">
+                                                aria-expandedaria-label="Cotar {{ $item->name }}"
+                                                alt="{{ $item->name }}" title="Acessar {{ $item->name }}">
 
                                                 <div class="card-nova-home">
                                                     <div class="card-logo">
-                                                        <img class="icone" src="/assets/images/icons/Residencial.png"
-                                                            class="img-lazy-loading" src=""
-                                                            alt="Seguro Residencial"
-                                                            title="assets/icons/home/icon-seguro-residencial.svg">
+                                                        @if ($item->icon_path != 'Nada enviado')
+                                                            <img class="icone" src="{{ $item->icon_path }}"
+                                                                class="img-lazy-loading" src=""
+                                                                alt="{{ $item->name }}"
+                                                                title="assets/icons/home/icon-seguro-residencial.svg">
+                                                        @endif
+
                                                     </div>
                                                     <div>
                                                         <h2 class="card-txt">{{ $item->name }}</h2>
@@ -138,8 +141,6 @@
                                                 </div>
                                             </a>
                                         </div>
-
-                                        //COLOCAR ICONES NAS CATEGORIAS
                                     @endforeach
 
 
@@ -300,15 +301,18 @@
                                 <div class="slider slider-nav">
                                     @foreach ($categories_para_empresa as $item)
                                         <div class="card-banner">
-                                            <a draggable="false" href="{{ $item->link }}" class="item-link-produto utm_cotacao"
-                                                target="" rel="noopener noreferrer" style="text-decoration: none;"
-                                                alt="Seguro Empresarial" title="Acessar Seguro Empresarial">
+                                            <a draggable="false" href="{{ $item->link }}"
+                                                class="item-link-produto utm_cotacao" target=""
+                                                rel="noopener noreferrer" style="text-decoration: none;"
+                                                alt="{{ $item->name }}" title="Acessar {{ $item->name }}">
 
                                                 <div class="card-nova-home">
                                                     <div class="card-logo">
-                                                        <img class="icone" src="/assets/images/icons/Empresarial.png"
-                                                            class="img-lazy-loading" src=""
-                                                            alt="Seguro Empresarial" title="">
+                                                        @if ($item->icon_path != 'Nada enviado')
+                                                            <img class="icone" src="{{ $item->icon_path }}"
+                                                                class="img-lazy-loading" src=""
+                                                                alt="{{ $item->name }}" title="">
+                                                        @endif
                                                     </div>
                                                     <div>
                                                         <h2 class="card-txt">{{ $item->name }}</h2>
@@ -424,7 +428,7 @@
                     <div class="col-12 col-md-7" id="menubar" aria-orientation="vertical" aria-controls="menu"
                         role="listbox">
                         <ul id="menu-home-area-cliente" class="menu-area-cliente">
-                            <li id="menu-item-52869"
+                            {{-- <li id="menu-item-52869"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-52869">
                                 <a target="_blank" href="/seguro">Seguro de Vida</a>
                                 <ul class="sub-menu">
@@ -449,8 +453,8 @@
                                         <a href="/seguro">Lataria e Pintura</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li id="menu-item-42492"
+                            </li> --}}
+                            {{-- <li id="menu-item-42492"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42492">
                                 <a target="_blank" href="/seguro">Seguro de Saúde</a>
                             </li>
@@ -498,12 +502,12 @@
                             <li id="menu-item-51773"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51773">
                                 <a href="/seguro">Seguro Rural</a>
-                            </li>
-                            <li id="menu-item-53864"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53864">
-                                <a href="/seguro">Seguro de Transporte</a>
-                            </li>
-
+                            </li> --}}
+                            @foreach ($categories as $item)
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                    <a href="{{ $item->link }}">{{ $item->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ $categorie->name }} | {{ env('APP_NAME') }}
+    Nossos Seguros | {{ env('APP_NAME') }}
 @endsection
 
 @section('seo')
@@ -29,10 +29,6 @@
         .img-seguro img {
             object-position: center;
             object-fit: cover
-        }
-
-        .seguro-text {
-            padding-left: 5rem
         }
 
         .seguro-info-container a {
@@ -68,7 +64,7 @@
             width: 100%;
             height: 80%;
             /* border-bottom-left-radius: 0;
-                                            border-bottom-right-radius: 0; */
+                                                border-bottom-right-radius: 0; */
         }
 
         .img-single-seguro img {
@@ -107,28 +103,22 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-12">
-                <div class="img-seguro">
-                    <img src="{{ $categorie->main_image }}" alt="{{ $categorie->name }}" class="img-fluid">
-                </div>
+
+            <div class="seguro-text">
+                <h1>Nossos seguros {{ $type == 'para_empresa' ? 'para a sua empresa' : '' }}</h1>
+
+                <h3>Confira os nossos seguros {{ $type == 'para_empresa' ? 'para a sua corporação!' : '' }}</h3>
             </div>
 
-            <div class="col-lg-6 col-12">
-                <div class="seguro-text">
-                    <h1>{{ $categorie->name }}</h1>
-
-                    <h3>{{ $categorie->description }}</h3>
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="container mb-5">
         <div class="row">
-            @foreach ($categorie->products as $item)
+            @foreach ($categories_selecionada as $item)
                 <div class="col-12 col-xl-4">
                     <div class="seguro-info-container">
-                        <a href="/seguro/{{ $item->slug }}">
+                        <a href="/seguros/{{ $item->slug }}">
                             <div class="img-single-seguro">
                                 <img src="{{ $item->main_image }}" alt="{{ $item->name }}">
                             </div>

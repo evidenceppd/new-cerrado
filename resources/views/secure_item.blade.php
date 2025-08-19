@@ -46,10 +46,8 @@
                     <div class="panel-group" id="custom-collapse-0">
                         <img src="/assets/images/seguros/1.jpg" style="max-width: 600px;  width: 100%;"
                             class="mb-2 mt-4 rounded-3 main_image" alt="">
-                        <h2 class="secure_title" class="mt-4">Nome do seguro</h2>
-                        O Seguro de Vida garante segurança financeira para você e aqueles que mais ama, oferecendo suporte
-                        em momentos inesperados. Com coberturas flexíveis e benefícios exclusivos, você tem a tranquilidade
-                        de saber que sua família estará amparada caso algo aconteça.
+                        <h2 class="secure_title" class="mt-4">{{ $categorie->name }}</h2>
+                        {!! $categorie->description !!}
                         <br>
                         <br>
                         <br>

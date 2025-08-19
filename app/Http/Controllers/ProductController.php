@@ -109,7 +109,7 @@ class ProductController extends Controller
         $products = Product::where('published', 1)->where('slug', '!=',  $slug)->inRandomOrder()->paginate(4);
         AnalyticsService::newView($request, 'product_id', $product->id);
 
-        return view('single-product1', compact('product', 'products'));
+        return view('single-product', compact('product', 'products'));
     }
 
     /**

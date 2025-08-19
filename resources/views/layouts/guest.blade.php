@@ -28,7 +28,7 @@
 </head>
 
 <body class="authentication-bg">
-    <div style="background-color: #c4292e;height: 5px;width: 100%;position: fixed;top: 0;left: 0;z-index: 5;"></div>
+    <div style="background-color: #ffdf2e;height: 5px;width: 100%;position: fixed;top: 0;left: 0;z-index: 5;"></div>
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
         <div class="container">
             <div class="row justify-content-center">

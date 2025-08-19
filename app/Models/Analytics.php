@@ -8,7 +8,7 @@ class Analytics extends Model
 {
 
     protected $fillable = [
-        'post_id',
+        'product_id',
         'deviceType',
         'date_analytics_view',
         'date_analytics_view',

@@ -19,8 +19,6 @@ class AdminController extends Controller
         }])->orderBy('created_at', 'DESC')->paginate(10);
 
 
-        $lastPosts = Post::orderBy('created_at', 'Desc')->paginate(5);
-
         $analytics = [
             "viewsToday" => AnalyticsService::viewToday(),
             "viewTodayPercentage" => AnalyticsService::viewTodayPercentage(),
@@ -28,12 +26,12 @@ class AdminController extends Controller
             "viewsMonth" => AnalyticsService::countViewsMonth()
         ];
 
-        $moreViewPosts = Post::withSum('analytics', 'views')
+        $moreViewSecures = Product::withSum('analytics', 'views')
             ->orderByDesc('analytics_sum_views')
             ->with('analytics')
             ->paginate(5);
 
 
-        return view('admin.dashboard', compact('products', 'lastPosts', 'analytics', 'moreViewPosts', 'products'));
+        return view('admin.dashboard', compact('products', 'analytics', 'moreViewSecures', 'products'));
     }
 }

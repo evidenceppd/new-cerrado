@@ -151,13 +151,16 @@
                                         <li class="acesso-parceiros-lista"> <img class="arrow"
                                                 src="/assets/images/icons/arrow-blue.svg" alt="Clique para ver"
                                                 title="BB Consórcios"><a class="dropdown-item"
-                                                aria-label="Ir para BB Consórcios" title="Ir para BB Consórcios"
-                                                target="_blank" rel="noopener noreferrer">BB Consórcios</a></li>
+                                                aria-label="Ir para BB Consórcios"
+                                                href="https://www.bb.com.br/site/pra-voce/consorcios/"
+                                                title="Ir para BB Consórcios" target="_blank"
+                                                rel="noopener noreferrer">BB Consórcios</a></li>
                                         <li class="acesso-parceiros-lista"> <img class="arrow"
                                                 src="/assets/images/icons/arrow-blue.svg" alt="Clique para ver"
                                                 title="BB Seguros"><a class="dropdown-item"
-                                                aria-label="Ir para BB Seguros" title="Ir para BB Seguros"
-                                                target="_blank" rel="noopener noreferrer">BB Seguros</a></li>
+                                                aria-label="Ir para BB Seguros" href="https://www.bbseguros.com.br/"
+                                                title="Ir para BB Seguros" target="_blank"
+                                                rel="noopener noreferrer">BB Seguros</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -596,7 +599,8 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="{{ $item->comunicado->link }}">Cote
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
+                                                Cote
                                                 Agora</a>
                                         </div>
                                     </div>
@@ -638,7 +642,10 @@
                                         </li>
                                     @endforeach
                                 </ul>
-                                @if (isset($item->comunicado) && $item->comunicado->mostrar == 1)
+                                @if (isset($item->comunicado) &&
+                                        isset($item->comunicado->name) &&
+                                        isset($item->comunicado->description) &&
+                                        $item->comunicado->mostrar == 1)
                                     <div class="wrapper-comunicado">
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
@@ -654,8 +661,9 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="{{ $item->comunicado->link }}">Cote
-                                                Agora</a>
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name}}.">
+                                                Cote Agora
+                                            </a>
                                         </div>
                                     </div>
                                 @endif

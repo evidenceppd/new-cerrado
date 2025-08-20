@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Lista de produtos
+    Lista de seguros
 @endsection
 
 @section('content')

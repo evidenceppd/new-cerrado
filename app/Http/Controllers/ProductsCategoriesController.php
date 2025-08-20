@@ -60,21 +60,24 @@ class ProductsCategoriesController extends Controller
                 $iconpath = "Nada enviado";
             }
 
+            $slug = Str::slug($request->name);
+
             $categorie = ProductsCategories::create([
                 'name' => $request->name,
                 'description' => $request->description,
                 'main_image' => $path,
-                'slug' => Str::slug($request->name),
+                'slug' => $slug,
                 'icon_path' => $iconpath,
                 'type' => $request->type,
-                'link' => isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug,
+                'link' => isset($request->categorie_link) ? $request->categorie_link : '/seguros/' . $slug,
+                'mostrar' => isset($request->mostrar_categoria) ? 1 : 0,
             ]);
 
             Comunicado::create([
                 'name' => $request->comunicado_name,
                 'categorie_id' => $categorie->id,
                 'description' => $request->comunicado_description,
-                'link' => $request->comunicado_link,
+                // 'link' => $request->comunicado_link,
                 'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
             ]);
 
@@ -144,7 +147,7 @@ class ProductsCategoriesController extends Controller
                 [
                     'name' => $request->comunicado_name,
                     'description' => $request->comunicado_description,
-                    'link' => $request->comunicado_link,
+                    // 'link' => $request->comunicado_link,
                     'mostrar' => isset($request->mostrar_comunicado) ? 1 : 0,
                 ]
             );
@@ -157,7 +160,9 @@ class ProductsCategoriesController extends Controller
             $categorie->user_id = Auth::user()->id;
             $categorie->type = $request->type;
             $categorie->icon_path = $iconpath;
-            $categorie->link = isset($request->categorie_link) ? $request->categorie_link : '/seguros/'.$request->slug;
+            $categorie->mostrar = isset($request->mostrar_categoria) ? 1 : 0;
+
+            $categorie->link = isset($request->categorie_link) ? $request->categorie_link : '/seguros/' . $categorie->slug;
             $categorie->save();
 
             return redirect(route('categories.index'))->with('success', 'Categoria atualizada com sucesso!');

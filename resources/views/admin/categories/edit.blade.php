@@ -128,20 +128,41 @@
                                         <div class="col-12 mb-3">
                                             <label for="icon_path" class="form-label" data-bs-toggle="tooltip"
                                                 data-bs-placement="right"
-                                                data-bs-title="Imagem principal da categoria, irá aparecer nas páginas principais.">Ícone
+                                                data-bs-title="Aqui você seleciona o ícone que irá aparecer no comunicado e no item do carrocel da página principal.">Ícone
                                                 do seguro<span><i class='bx bx-question-mark'></i></span>
                                             </label>
                                             <input type="file" name="icon_path" class="form-control" aria-label="file"
                                                 accept="image/*" {{ isset($categorie->icon_path) ? '' : 'required=""' }}>
                                         </div>
                                         @if (isset($categorie->icon_path))
-                                            <div class="col-12 col-lg-3 mb-3">
-                                                <img src="{{ $categorie->icon_path }}" alt="{{ $categorie->title }}"
-                                                    class="img-fluid rounded">
+                                            <div class="col-12 col-lg-1 mb-3">
+                                                <img style="min-width: 50%;" src="{{ $categorie->icon_path }}"
+                                                    alt="{{ $categorie->title }}" class="img-fluid rounded">
                                             </div>
                                             <input type="hidden" name="icon_path_existing"
                                                 value="{{ $categorie->icon_path }}">
                                         @endif
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Visibilidade da categoria</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input me-2" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked" name="mostrar_categoria"
+                                                        {{ isset($categorie->mostrar) && $categorie->mostrar == 0 ? '' : 'checked' }}>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked"
+                                                        data-bs-toggle="tooltip" data-bs-placement="right"
+                                                        data-bs-title="Marque essa opção para exibir ou ocultar a categoria no site">Mostrar
+                                                        categoria
+                                                        <span><i class='bx bx-question-mark'></i></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -165,14 +186,14 @@
                                         <div class="mb-3">
                                             <label for="comunicado_description" class="form-label"
                                                 data-bs-toggle="tooltip" data-bs-placement="right"
-                                                data-bs-title="Descreva a categoria.">Texto do
+                                                data-bs-title="Recado que aparece no comunicado.">Texto do
                                                 comunicado <span><i class='bx bx-question-mark'></i></span>
                                             </label>
                                             <div class="input-group">
                                                 <textarea id="comunicado_description" name="comunicado_description" class="editor-description form-control">{{ isset($categorie->comunicado->description) ? $categorie->comunicado->description : '' }}</textarea>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
+                                        {{-- <div class="mb-3">
                                             <label for="comunicado_link" class="form-label" data-bs-toggle="tooltip"
                                                 data-bs-placement="right" data-bs-title="Descreva a categoria.">Link de
                                                 redirecionamento do comunicado <span><i
@@ -181,7 +202,7 @@
                                             <div class="input-group">
                                                 <textarea id="comunicado_link" name="comunicado_link" class="editor-description form-control">{{ isset($categorie->comunicado->link) ? $categorie->comunicado->link : '' }}</textarea>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="card">
                                             <div class="card-header">
                                                 <h4 class="card-title">Visibilidade</h4>
@@ -196,7 +217,7 @@
                                                                 {{ isset($categorie->comunicado) && $categorie->comunicado->mostrar == 0 ? '' : 'checked' }}>
                                                             <label class="form-check-label" for="flexSwitchCheckChecked"
                                                                 data-bs-toggle="tooltip" data-bs-placement="right"
-                                                                data-bs-title="Marque essa opção para exibir o comunicado no site">Mostrar
+                                                                data-bs-title="Marque essa opção para exibir ou ocultar o comunicado no site">Mostrar
                                                                 comunicado
                                                                 <span><i class='bx bx-question-mark'></i></span></label>
                                                         </div>

@@ -45,15 +45,23 @@
 
         .seguro-info-container h5 {
             text-decoration: none;
-            margin-top: 2rem;
+            margin: 0rem;
             font-size: 1.5rem;
+        }
+
+        .single-seguro-name {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            width: 100%
         }
 
         .seguro-info-container {
             border: 2px solid #6d6E6D1f;
             background-color: #6d6E6D1f;
             border-radius: 2rem;
-            padding: 1.5rem;
+            padding: 1rem;
+            padding-bottom: 0;
             aspect-ratio: 1.45 / 1;
             display: flex;
         }
@@ -64,13 +72,14 @@
             width: 100%;
             height: 80%;
             /* border-bottom-left-radius: 0;
-                                                border-bottom-right-radius: 0; */
+                                                    border-bottom-right-radius: 0; */
         }
 
         .img-single-seguro img {
             width: 100%;
             object-fit: cover;
             object-position: center;
+            min-height: 100%;
         }
 
         .col-xl-4,

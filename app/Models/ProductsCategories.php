@@ -13,7 +13,8 @@ class ProductsCategories extends Model
         'slug',
         'link',
         'icon_path',
-        'type'
+        'type',
+        'mostrar'
     ];
 
 

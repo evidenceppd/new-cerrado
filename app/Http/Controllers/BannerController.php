@@ -42,21 +42,21 @@ class BannerController extends Controller
                 $fileBanner->storeAs('media/banner/', $filenameBanner, 'public');
 
                 $pathBanner = "/storage/media/banner/" . $filenameBanner;
-            } 
+            }
 
             if ($request->hasFile('banner_mobile')) {
-                $fileMobile= $request->file('banner_mobile');
+                $fileMobile = $request->file('banner_mobile');
                 $extensionMobile = $fileMobile->getClientOriginalExtension();
-                $filenameMobile= Str::random(40) . '.' . $extensionMobile;
+                $filenameMobile = Str::random(40) . '.' . $extensionMobile;
 
                 $fileMobile->storeAs('media/banner/', $filenameMobile, 'public');
 
                 $pathMobile = "/storage/media/banner/" . $filenameMobile;
-            } 
-            
+            }
+
             Banner::create([
-                'foto_banner' => $pathBanner,
-                'banner_mobile' => $pathMobile,
+                'foto_banner' => isset($pathBanner) ? $pathBanner : NULL,
+                'banner_mobile' => isset($pathMobile) ? $pathMobile : NULL,
                 'mostrar' => isset($request->mostrar_banner) ? 1 : 0,
                 'link' => isset($request->link_banner) ? $request->link_banner : NULL,
             ]);
@@ -104,9 +104,9 @@ class BannerController extends Controller
             }
 
             if ($request->hasFile('banner_mobile')) {
-                $fileMobile= $request->file('banner_mobile');
+                $fileMobile = $request->file('banner_mobile');
                 $extensionMobile = $fileMobile->getClientOriginalExtension();
-                $filenameMobile= Str::random(40) . '.' . $extensionMobile;
+                $filenameMobile = Str::random(40) . '.' . $extensionMobile;
 
                 $fileMobile->storeAs('media/banner/', $filenameMobile, 'public');
 

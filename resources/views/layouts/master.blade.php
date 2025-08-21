@@ -201,7 +201,7 @@
                                     <ul>
                                         <li style="font-weight: 600;border-bottom: 1px solid #6e6d6d36; padding: 15px 12px;"
                                             class="acesso-parceiros-lista">Nossos corretores</li>
- 
+
                                         @foreach ($corretores as $corretor)
                                             <li class="acesso-parceiros-lista">
                                                 <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
@@ -321,6 +321,22 @@
                                     </ul>
                                 </li>
                             @endforeach
+                            @foreach ($categories_consorcios as $item)
+                                <li id="menu-item-41550"
+                                    class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41550">
+                                    <a href="/seguros-empresas"
+                                        title="Consórcios &#8211; Clique para conhecer nossas opções">{{ $item->name }}</a>
+                                    <div class="sub-menu-open"></div>
+                                    <ul class="sub-menu">
+                                        @foreach ($item->products as $productitem)
+                                            <li class="menu-item">
+                                                <a
+                                                    href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -366,10 +382,9 @@
                         </li>
                         <li class="has-children full-menu">
                             <div class="cd-dropdown-wrapper">
-                                <a class="cd-dropdown-trigger" id="para-a-sua-empresa-2"
+                                <a class="cd-dropdown-trigger" id="consorcios-2"
                                     title="clique para ver mais no menu Para a sua Empresa" href="/seguros-empresa"
-                                    data-menu-items-target="menuItems-para-a-sua-empresa-2"
-                                    data-submenu-full-width="true">
+                                    data-menu-items-target="menuItems-consorcios-2" data-submenu-full-width="true">
                                     Consócios </a>
 
 
@@ -524,7 +539,7 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name}}.">
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
                                                 Cote Agora
                                             </a>
                                         </div>

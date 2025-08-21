@@ -32,7 +32,7 @@
                             {{ isset($categorie->id) ? 'Editar Categoria' : 'Adicionar Categoria' }}</h4>
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Painel de Controle</a></li>
-                            <li class="breadcrumb-item active"><a href="{{ route('blog.index') }}">Categoria</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ route('banner.index') }}">Categoria</a></li>
                             <li class="breadcrumb-item active">{{ isset($categorie->id) ? 'Editar' : 'Adicionar' }}</li>
                         </ol>
                     </div>

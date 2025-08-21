@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CorretorController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LeadController;
@@ -8,11 +9,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsCategoriesController;
 use App\Http\Controllers\SiteController;
+use App\Models\Banner;
 use Illuminate\Support\Facades\Route;
 
 //Páginas
 Route::get('/', [SiteController::class, 'index'])->name('index');
-Route::get('/sobre-nos', [SiteController::class, 'aboutUs'])->name('aboutUs');
+
 Route::get('/seguros', [SiteController::class, 'secureGeral']);
 Route::get('/seguros-empresas', [SiteController::class, 'secureEmpresa']);
 
@@ -26,10 +28,6 @@ Route::get('/blog/{url}', [PostController::class, 'show'])->name('blog.show');
 //Rotas de categoria
 Route::get('/seguros/{slug}', [ProductsCategoriesController::class, 'show'])->name('categories.show');
 
-//Rotas de cadastro de leads
-Route::post('/lead/cadastrar-download', [LeadController::class, 'registerDownload']);
-Route::post('/lead/enviar-orcamento', [LeadController::class, 'sendOrcamento']);
-
 //Rota de pesquisa
 Route::get('/buscar', [SiteController::class, 'search'])->name('search');
 
@@ -39,17 +37,6 @@ Route::get('/buscar', [SiteController::class, 'search'])->name('search');
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.index');
 Route::redirect('/admin', '/login');
 Route::middleware('auth')->prefix('/admin')->group(function () {
-    Route::get('/blog', [PostController::class, 'index'])->name('blog.index');
-
-    Route::get('/blog/create', [PostController::class, 'create'])->name('blog.create');
-    Route::post('/blog/create', [PostController::class, 'store'])->name('blog.store');
-
-    Route::post('/blog/create/upload-image-content', [PostController::class, 'uploadImageContent'])->name('blog.upload.image-content');
-
-    Route::get('/blog/edit/{id}', [PostController::class, 'edit'])->name('blog.edit');
-    Route::post('/blog/edit/{id}', [PostController::class, 'update'])->name('blog.update');
-    Route::post('/blog/delete/{id}', [PostController::class, 'destroy'])->name('blog.delete');
-
 
     Route::get('/seguros', [ProductController::class, 'index'])->name('product.index');
     Route::get('/seguros/create', [ProductController::class, 'create'])->name('product.create');
@@ -69,17 +56,12 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::post('/categorias/edit/{id}', [ProductsCategoriesController::class, 'update'])->name('categories.update');
     Route::post('/categorias/delete/{id}', [ProductsCategoriesController::class, 'destroy'])->name('categories.delete');
 
-    Route::get('/leads', [LeadController::class, 'index'])->name('leads.index');
-    Route::get('/leads/edit/{id}', [LeadController::class, 'edit'])->name('leads.edit');
-    Route::post('/leads/edit/{id}', [LeadController::class, 'update'])->name('leads.update');
-    Route::post('/leads/delete/{id}', [LeadController::class, 'destroy'])->name('leads.delete');
-
-    Route::get('/clientes', [CustomerController::class, 'index'])->name('customers.index');
-    Route::get('/clientes/create', [CustomerController::class, 'create'])->name('customers.create');
-    Route::post('/clientes/create', [CustomerController::class, 'store'])->name('customers.store');
-    Route::get('/clientes/edit/{id}', [CustomerController::class, 'edit'])->name('customers.edit');
-    Route::post('/clientes/edit/{id}', [CustomerController::class, 'update'])->name('customers.update');
-    Route::post('/clientes/delete/{id}', [CustomerController::class, 'destroy'])->name('customers.delete');
+    Route::get('/banners', [BannerController::class, 'index'])->name('banner.index');
+    Route::get('/banners/create', [BannerController::class, 'create'])->name('banner.create');
+    Route::post('/banners/create', [BannerController::class, 'store'])->name('banner.store');
+    Route::get('/banners/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
+    Route::post('/banners/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
+    Route::post('/banners/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
     Route::get('/corretores', [CorretorController::class, 'index'])->name('corretores.index');
     Route::get('/corretores/create', [CorretorController::class, 'create'])->name('corretores.create');

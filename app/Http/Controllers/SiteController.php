@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\ProductsCategories;
@@ -13,10 +14,10 @@ class SiteController extends Controller
 {
     public function  index(Request $request): View
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(4);
+        $banners = Banner::where('mostrar', 1)->orderBy('created_at', 'desc')->get();
 
         AnalyticsService::newView($request, 'page', 1);
-        return view('index', compact('request', 'posts'));
+        return view('index', compact('request', 'banners'));
     }
 
     public function secureGeral()

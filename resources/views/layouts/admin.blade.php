@@ -103,6 +103,10 @@
                                         <i class="ri-dashboard-2-line align-middle me-2 fs-18"></i><span
                                             class="align-middle">Painel</span>
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('banner.index') }}">
+                                        <i class="ri-flag-fill align-middle me-2 fs-18"></i><span
+                                            class="align-middle">Banners</span>
+                                    </a>
                                     {{-- <a class="dropdown-item" href="{{ route('blog.index') }}">
                                         <i class="ri-news-line align-middle me-2 fs-18"></i><span
                                             class="align-middle">Blog</span>
@@ -299,28 +303,27 @@
                         </a>
                     </li>
 
-                    {{-- <li class="nav-item">
-                        <a class="nav-link menu-arrow" href="#sidebarBlog" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="sidebarBlog">
+                    <li class="nav-item">
+                        <a class="nav-link menu-arrow" href="#sidebarBanners" data-bs-toggle="collapse"
+                            role="button" aria-expanded="false" aria-controls="sidebarBanners">
                             <span class="nav-icon">
-                                <i class="ri-news-line"></i>
+                                <i class="ri-flag-fill"></i>
                             </span>
-                            <span class="nav-text"> Blog </span>
+                            <span class="nav-text"> Banners </span>
                         </a>
-                        <div class="collapse" id="sidebarBlog">
+                        <div class="collapse" id="sidebarBanners">
                             <ul class="nav sub-navbar-nav">
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('blog.create') }}">Criar novo blog</a>
+                                    <a class="sub-nav-link" href="{{ route('banner.create') }}">Adicionar novo
+                                        banner</a>
                                 </li>
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('blog.index') }}">Ver todos os blogs</a>
-                                </li>
-                                <li class="sub-nav-item disabled">
-                                    <a class="sub-nav-link" href="property-details.html">Estátisicas dos blogs</a>
+                                    <a class="sub-nav-link" href="{{ route('banner.index') }}">Ver todos os
+                                        banners</a>
                                 </li>
                             </ul>
                         </div>
-                    </li> <!-- end Pages Menu --> --}}
+                    </li> <!-- end Pages Menu -->
 
                     <li class="nav-item">
                         <a class="nav-link menu-arrow" href="#sidebarProducts" data-bs-toggle="collapse"
@@ -336,10 +339,7 @@
                                     <a class="sub-nav-link" href="{{ route('product.create') }}">Adicionar novo
                                         Seguro</a>
                                 </li>
-                                {{-- <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('product.create', 2) }}">Adicionar novo
-                                        Seguro:<br> Layout 2</a>
-                                </li> --}}
+
                                 <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="{{ route('product.index') }}">Ver todos os
                                         Seguros</a>
@@ -375,32 +375,6 @@
                             </ul>
                         </div>
                     </li>
-
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href={{ route('leads.index') }}>
-                            <span class="nav-icon">
-                                <i class="ri-group-fill"></i>
-                            </span>
-                            <span class="nav-text">Leads</span>
-                        </a>
-                    </li> --}}
-                    {{-- <li class="nav-item">
-                        <a class="nav-link menu-arrow" href="#sidebarCustomers" data-bs-toggle="collapse"
-                            role="button" aria-expanded="false" aria-controls="sidebarCustomers">
-                            <span class="nav-icon">
-                                <i class="ri-user-smile-fill"></i>
-                            </span>
-                            <span class="nav-text"> Clientes </span>
-                        </a>
-                        <div class="collapse" id="sidebarCustomers">
-                            <ul class="nav sub-navbar-nav">
-                                <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('customers.index') }}">Ver todos os
-                                        clientes</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> --}}
 
                     <li class="menu-title">Corretores</li>
 

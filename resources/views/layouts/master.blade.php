@@ -201,54 +201,7 @@
                                     <ul>
                                         <li style="font-weight: 600;border-bottom: 1px solid #6e6d6d36; padding: 15px 12px;"
                                             class="acesso-parceiros-lista">Nossos corretores</li>
-                                        {{-- <li class="acesso-parceiros-lista">
-                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                alt="Clique para ver">
-                                            <a class="dropdown-item"
-                                                aria-label="Flavio Tatsuta - Especialista Consórcio Agrícola"
-                                                href="https://wa.me/5564992838802" target="_blank"
-                                                rel="noopener noreferrer">
-                                                Flavio Tatsuta - Especialista Consórcio Agrícola
-                                            </a>
-                                        </li>
-                                        <li class="acesso-parceiros-lista">
-                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                alt="Clique para ver">
-                                            <a class="dropdown-item" aria-label="Ranielly - Especialista em Seguros"
-                                                href="https://wa.me/5564993441063" target="_blank"
-                                                rel="noopener noreferrer">
-                                                Ranielly - Especialista em Seguros
-                                            </a>
-                                        </li>
-                                        <li class="acesso-parceiros-lista">
-                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                alt="Clique para ver">
-                                            <a class="dropdown-item" aria-label="Patricia - Gerente de Crédito"
-                                                href="https://wa.me/5564992715015" target="_blank"
-                                                rel="noopener noreferrer">
-                                                Patricia - Gerente de Crédito
-                                            </a>
-                                        </li>
-                                        <li class="acesso-parceiros-lista">
-                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                alt="Clique para ver">
-                                            <a class="dropdown-item"
-                                                aria-label="Layniker - Agente de Crédito em Morrinhos"
-                                                href="https://wa.me/5564992715015" target="_blank"
-                                                rel="noopener noreferrer">
-                                                Layniker - Agente de Crédito em Morrinhos
-                                            </a>
-                                        </li>
-                                        <li class="acesso-parceiros-lista">
-                                            <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
-                                                alt="Clique para ver">
-                                            <a class="dropdown-item"
-                                                aria-label="Antonia - Agente de Crédito em Piracanjuba"
-                                                href="https://wa.me/5564992838802" target="_blank"
-                                                rel="noopener noreferrer">
-                                                Antonia - Agente de Crédito em Piracanjuba
-                                            </a>
-                                        </li> --}}
+ 
                                         @foreach ($corretores as $corretor)
                                             <li class="acesso-parceiros-lista">
                                                 <img class="arrow" src="/assets/images/icons/arrow-blue.svg"
@@ -284,29 +237,7 @@
         </nav>
     </header>
     <nav class="menu fixed">
-        {{-- <div class="search-bar">
-            <div class="container">
-                <form action="/" method="get">
-                    <button type="button" id="close-search-bar" class="btn">
-                        <img src="/assets/images/icons/close-search.svg" alt="Fechar barra de pesquisa"
-                            title="Barra de Pesquisa" width="22px" height="21px">
-                    </button>
 
-                    <div class="form-group" style="margin-left: 40px;">
-                        <div class="input-group" style="width: 100%;">
-                            <input class="form-control" type="text" name="s" id="search"
-                                placeholder="Pesquisar..." autocomplete="off">
-                            <span class="input-group-addon p-0" style="width: 27px;">
-                                <button type="submit" value="Submit">
-                                    <img src="/assets/images/icons/pesquisar.svg" alt="Pesquisar e"
-                                        title=" Pesquisar" width="20px" height="20px">
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div> --}}
 
         <div class="container-fluid">
             <div class="header-navbar">
@@ -343,20 +274,7 @@
                         </div>
 
                         <ul class="cd-dropdown-content">
-                            {{-- <li class="item-search">
-                                <form class="cd-search" action="/" method="get">
-                                    <div class="input-group">
-                                        <input type="search" name="s" placeholder="Pesquisar..."
-                                            autocomplete="off">
-                                        <span class="input-group-addon p-0" id="basic-addon2" style="width: 50px">
-                                            <button type="submit" value="Submit">
-                                                <img src="/assets/images/icons/lupa.svg" alt="Pesquisar"
-                                                    title="pesquisar" width="20px" height="20px">
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </li> --}}
+
                             <li id="menu-item-41621"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41621"><a
                                     href="/"
@@ -381,65 +299,10 @@
                                                             href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
                                                     </li>
                                                 @endforeach
-
-                                                {{-- <li class="menu-item">
-                                                    <a href="/seguro">Seguro Viagem Internacional</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="/seguro">Cotação Seguro Viagem</a>
-                                                </li> --}}
                                             </ul>
                                         </li>
                                     @endforeach
 
-
-                                    {{-- <li class="menu-item menu-item-has-children">
-                                        <a href="/seguro">Seguros de Automóveis</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="/seguro">Seguro Auto</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Auto Clássico</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Auto Econômico</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Auto Roubo</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Auto Roubo + Rastreador</a>
-                                            </li>
-                                            <li class="menu-item"><a href="/seguro">Seguro de Moto</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Caminhão</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Utilitário Carga</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="/seguro">Seguros para Residências</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="/seguro">Seguro Residencial Premiado</a>
-                                            </li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Fiança Locatícia &#8211;
-                                                    Aluguel</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Imobiliário</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="/seguro">Seguros de Vida</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="/seguro">Seguro Funeral +</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro Vida Individual</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="/seguro">Seguros de Acidentes Pessoais</a>
-                                        <div class="sub-menu-open"></div>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="/seguro">Seguro de Acidentes Pessoais
-                                                    Individual</a></li>
-                                            <li class="menu-item"><a href="/seguro">Seguro de Acidentes Pessoais
-                                                    Estagiário</a></li>
-                                        </ul>
-                                    </li> --}}
                                 </ul>
                             </li>
                             @foreach ($categories_para_empresa as $item)
@@ -735,46 +598,6 @@
                     </a>
                 </div>
             </div>
-
-            {{-- <p class="pl-pr ola" style="margin-bottom: 0!important">Outras formas de contato </p><br>
-
-            <div class="outros-contatos">
-                <ul class="list-unstyled contatos">
-                    <li>
-                        <a href="https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:108a13dc-41e4-44ff-b267-0e4a0207942a"
-                            target="_blank" id="btn-menu-apple-mensagens" alt="Apple Mensagens"
-                            title="ir para Apple Mensagens" rel="noopener noreferrer" class="">
-                            <img class="img-lazy-loading" width="25px" height="25px"
-                                src="/assets/images/icons/imessage.png"
-                                alt="Resolva Aqui: Acesso rápido aos principais serviços e assistências para facilitar o seu dia-dia."
-                                title="chat online" />
-                            <p>iMessage</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="instagram-footer-btn" target="_blank" rel="noopener"
-                            href="https://www.instagram.com/tokiomarineseguradora" title="ir para Instagram"
-                            alt="Instagram" height="25" width="25">
-                            <img class="img-lazy-loading" width="25px" height="25px"
-                                src="/assets/images/icons/instagramdirect.png"
-                                alt="Resolva Aqui: Acesso rápido aos principais serviços e assistências para facilitar o seu dia-dia."
-                                title="chat online" height="25" width="25">
-                            <p>Direct</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="telegram-footer-btn" target="_blank" rel="noopener"
-                            href="https://t.me/TokioMarineSeguradoraBot" title="ir para Telegram" alt="Telegram"
-                            height="25" width="25">
-                            <img class="img-lazy-loading" width="25px" height="25px"
-                                src="/assets/images/icons/icon-telegram.png"
-                                alt="Resolva Aqui: Acesso rápido aos principais serviços e assistências para facilitar o seu dia-dia."
-                                title="chat online">
-                            <p>Telegram</p>
-                        </a>
-                    </li>
-                </ul>
-            </div> --}}
         </div>
         <iframe class="chat-marina-iframe" name="iframe1" width="100%" height="770px"></iframe>
     </section>
@@ -792,53 +615,7 @@
     <footer class="footer" role="contentinfo">
         <section class="sub-menu-footer">
             <div class="container">
-                {{-- <div class="row justify-content-center">
-                    <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
-                        <div class="mb-5">
-                            <a alt="Condições Gerais dos Seguros - Clique para saber mais"
-                                title="Condições Gerais dos Seguros Cerrado Seguros e Consórcios" class="saiba-mais"
-                                role="link" href="/seguro">
-                                <p class="title">Condições Gerais</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-6">
-                        <div class="mb-5">
-                            <a alt="Oficinas Referenciadas  - Clique para saber mais"
-                                title="Oficinas Referenciadas - Rede Tokio Oficinas" class="saiba-mais"
-                                role="link" href="/seguro">
-                                <p class="title">Oficinas</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
-                        <div class="mb-5">
-                            <a alt="Sinistro dos Seguros - Clique para saber mais"
-                                title="Sinistro dos Seguros Cerrado Seguros e Consórcios" class="saiba-mais"
-                                role="link" href="/seguro">
-                                <p class="title">Sinistros</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
-                        <div class="mb-5">
-                            <a alt="Nossos Seguros  - Clique para saber mais"
-                                title="Seguros Cerrado Seguros e Consórcios - Portfólio de Seguros" class="saiba-mais"
-                                role="link" href="/seguro">
-                                <p class="title">Nossos Seguros</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-6 ml-0 mr-0 pl-0 pr-0">
-                        <div class="mb-5">
-                            <a alt="Faça uma Cotação de Seguro ou Simular Seguro Online - Clique para Cotar Seguros"
-                                title="Faça uma Cotação - Cotação Seguros Cerrado Seguros e Consórcios "
-                                class="saiba-mais" role="link" href="/seguro">
-                                <p class="title">Faça uma cotação</p>
-                            </a>
-                        </div>
-                    </div>
-                </div> --}}
+
             </div>
         </section>
         <aside class="widget-area" role="complementary">
@@ -883,98 +660,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <section class="menu-colapse">
-                <div class="container collapse" id="demo" aria-expanded="true" style="height: 0px;">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 widget-1">
-                            <div id="nav_menu-6" class="widget_nav_menu">
-                                <h3>Seguros para Você</h3>
-                                <ul id="menu-footer-coluna-i" class="menu">
-                                    <li id="menu-item-54134"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54134">
-                                        <a href="/seguro">Seguros Viagem</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-59813"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59813">
-                                                <a href="/seguro">Seguro
-                                                    Viagem Nacional</a>
-                                            </li>
-                                            <li id="menu-item-59814"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59814">
-                                                <a href="/seguro">Seguro
-                                                    Viagem Internacional</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 widget-1">
-                            <div id="nav_menu-6" class="widget_nav_menu">
-                                <h3>Seguros para Você</h3>
-                                <ul id="menu-footer-coluna-i" class="menu">
-                                    <li id="menu-item-54134"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54134">
-                                        <a href="/seguro">Seguros Empersarias</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-59813"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59813">
-                                                <a href="/seguro">Seguro Empresa</a>
-                                            </li>
-                                            <li id="menu-item-59814"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59814">
-                                                <a href="/seguro">Seguro Sinistro</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 widget-1">
-                            <div id="nav_menu-6" class="widget_nav_menu">
-                                <h3>Seguros para Você</h3>
-                                <ul id="menu-footer-coluna-i" class="menu">
-                                    <li id="menu-item-54134"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54134">
-                                        <a href="/seguro">Seguros Automóvel</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-59813"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59813">
-                                                <a href="/seguro">Seguro Automóvel</a>
-                                            </li>
-                                            <li id="menu-item-59814"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59814">
-                                                <a href="/seguro">Seguro Motocicleta</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 widget-1">
-                            <div id="nav_menu-6" class="widget_nav_menu">
-                                <h3>Seguros para Você</h3>
-                                <ul id="menu-footer-coluna-i" class="menu">
-                                    <li id="menu-item-54134"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54134">
-                                        <a href="/seguro">Seguros de Vida</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-59813"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59813">
-                                                <a href="/seguro">Seguro Família</a>
-                                            </li>
-                                            <li id="menu-item-59814"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59814">
-                                                <a href="/seguro">Seguro Família</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> --}}
         </aside>
         <aside class="widget-mobile">
             <div class="container">

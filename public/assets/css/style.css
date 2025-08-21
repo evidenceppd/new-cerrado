@@ -156,6 +156,18 @@ nav.menu .desktop ul>li a.nav-item {
   font-family: 'Magistral', 'Titillium Web', sans-serif;
 }
 
+.splide__arrow svg {
+  fill: #ffdf2e;
+  height: 1.6em;
+  width: 1.6em;
+}
+
+.splide__arrow {
+  background-color: #163c67;
+  border: 2px solid #ffdf2e;
+  padding: .4rem;
+}
+
 .header-navbar #contact-li-menu a h4 {
   margin: 0;
   margin-top: -4px;
@@ -241,7 +253,7 @@ nav.menu .desktop ul>li a.nav-item {
 }
 
 .banner-home-index .conteudo {
-  padding-bottom: 160px;
+  padding-bottom: 170px
 }
 
 .banner-home-index .conteudo h1.title {
@@ -254,6 +266,11 @@ nav.menu .desktop ul>li a.nav-item {
 
 .banner-home-index .conteudo h1.title span {
   font-weight: 800;
+}
+
+.banners-slide {
+  border-top: 5px solid #ffdf2e;
+  border-bottom: 5px solid #ffdf2e;
 }
 
 .banner-home-index .conteudo p.subtitle {
@@ -316,18 +333,30 @@ nav.menu .desktop ul>li a.nav-item {
 }
 
 
-.carrossel-title .text {
+.carrossel-title {
   position: relative;
+}
+
+.carrossel-title .text {
+  position: absolute;
   left: 50%;
-  top: 0px;
-  width: fit-content;
   transform: translateX(-50%);
+  width: fit-content;
   font-size: 180px;
   line-height: 140px;
   font-family: 'Magistral', 'Titillium Web', sans-serif;
   text-transform: uppercase;
   color: #163c67;
   font-weight: 800;
+  z-index: 1;
+}
+
+.carrossel-title .text.cerrado {
+  top: -67px;
+}
+
+.carrossel-title .text.seguros {
+  bottom: -67px;
 }
 
 #banner-carro {
@@ -351,7 +380,7 @@ nav.menu .desktop ul>li a.nav-item {
 
 @media (max-width: 1400px) {
   .carrossel-title .text {
-    top: -40px;
+    /* top: -40px; */
     font-size: 140px;
   }
 }
@@ -370,8 +399,8 @@ nav.menu .desktop ul>li a.nav-item {
     background-size: contain;
   }
 
-  .carrossel-title {
-    display: none;
+  .carrossel-title .text {
+    font-size: 108px;
   }
 
 
@@ -411,7 +440,7 @@ nav.menu .desktop ul>li a.nav-item {
   }
 
   .banner-home-index .conteudo {
-    padding-bottom: 0;
+    padding-bottom: 120px;
   }
 
   .banner-home-index .conteudo .boxs .item-box {
@@ -422,5 +451,19 @@ nav.menu .desktop ul>li a.nav-item {
 
   .banner-home-index .conteudo .boxs .item-box img {
     width: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carrossel-title .text {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 560px) {}
+
+@media (max-width: 380px) {
+  .carrossel-title .text {
+    font-size: 60px;
   }
 }

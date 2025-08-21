@@ -95,7 +95,12 @@ class ProductsCategoriesController extends Controller
      */
     public function show(Request $request, $slug)
     {
-        $categorie = ProductsCategories::where('slug', $slug)->with('products')->first();
+        $categorie = ProductsCategories::where('slug', $slug)
+            ->with(['products' => function ($q) {
+                $q->where('published', 1);
+            }])
+            ->first();
+
         AnalyticsService::newView($request, 'categorie_id', $categorie->id);
         return view('categorie-single', compact('categorie'));
     }

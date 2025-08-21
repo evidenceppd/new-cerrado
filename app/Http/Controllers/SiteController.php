@@ -21,14 +21,14 @@ class SiteController extends Controller
 
     public function secureGeral()
     {
-        $categories_selecionada = ProductsCategories::where('type', 'seguro_geral')->get();
+        $categories_selecionada = ProductsCategories::where('mostrar', 1)->where('type', 'seguro_geral')->get();
 
         $type = "geral";
         return view('categories', compact('categories_selecionada', 'type'));
     }
 
     public function secureEmpresa() {
-        $categories_selecionada = ProductsCategories::where('type', 'seguro_para_empresa')->get();
+        $categories_selecionada = ProductsCategories::where('mostrar', 1)->where('type', 'seguro_para_empresa')->get();
         $type = "para_empresa";
         return view('categories', compact('categories_selecionada', 'type'));
     }

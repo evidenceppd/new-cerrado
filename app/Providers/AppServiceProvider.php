@@ -30,9 +30,14 @@ class AppServiceProvider extends ServiceProvider
 
         try {
             DB::connection()->getPdo();
-            //INCLUIR VISIBILIDADE CATEGORIAS
-            $categories_geral = ProductsCategories::with(['products', 'comunicado'])->where("type", "seguro_geral")->where('mostrar', 1)->get();
-            $categories_para_empresa = ProductsCategories::with(['products', 'comunicado'])->where("type", "seguro_para_empresa")->where('mostrar', 1)->get();
+            $categories_geral = ProductsCategories::with(['products' => function ($q) {
+                $q->where('published', 1);
+            }])->where("type", "seguro_geral")->where('mostrar', 1)->get();
+
+            $categories_para_empresa = ProductsCategories::with(['products' => function ($q) {
+                $q->where('published', 1);
+            }])->where("type", "seguro_para_empresa")->where('mostrar', 1)->get();
+            
             $categories = ProductsCategories::where('mostrar', 1)->get();
             $corretores = Corretor::where('mostrar', 1)->get();
             $products = Product::all();

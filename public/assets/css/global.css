@@ -7695,7 +7695,7 @@ nav.menu:not(.fixed) .search-bar {
         left: 50% !important;
         padding: 15px !important;
         position: absolute;
-        width: 95%;
+        min-width: 68%;
         top: 104px !important;
         max-width: 1060px !important;
         border-radius: 16px;

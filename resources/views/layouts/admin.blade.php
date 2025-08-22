@@ -113,7 +113,7 @@
                                     </a> --}}
                                     <a class="dropdown-item" href="{{ route('product.index') }}">
                                         <i class="ri-box-3-fill align-middle me-2 fs-18"></i><span
-                                            class="align-middle">Seguros</span>
+                                            class="align-middle">Seguros e Consórcios</span>
                                     </a>
                                     <a class="dropdown-item" href="{{ route('categories.index') }}">
                                         <i class="ri-book-shelf-fill align-middle me-2 fs-18"></i><span
@@ -331,22 +331,22 @@
                             <span class="nav-icon">
                                 <i class="ri-box-3-fill"></i>
                             </span>
-                            <span class="nav-text"> Seguros </span>
+                            <span class="nav-text"> Seguros e Consórcios </span>
                         </a>
                         <div class="collapse" id="sidebarProducts">
                             <ul class="nav sub-navbar-nav">
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('product.create') }}">Adicionar novo
-                                        Seguro</a>
+                                    <a class="sub-nav-link" href="{{ route('product.create') }}">Adicionar novo <br>
+                                        Seguro /  Consórcio</a>
                                 </li>
 
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="{{ route('product.index') }}">Ver todos os
-                                        Seguros</a>
+                                    <a class="sub-nav-link" href="{{ route('product.index') }}">Ver todos os <br>
+                                        Seguros / Consórcios</a>
                                 </li>
-                                <li class="sub-nav-item disabled">
+                                {{-- <li class="sub-nav-item disabled">
                                     <a class="sub-nav-link" href="property-details.html">Estátisicas dos Seguros</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </li> <!-- end Pages Menu -->

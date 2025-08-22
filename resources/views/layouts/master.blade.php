@@ -305,38 +305,60 @@
 
                                 </ul>
                             </li>
-                            @foreach ($categories_para_empresa as $item)
-                                <li id="menu-item-41550"
-                                    class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41550">
-                                    <a href="/seguros-empresas"
-                                        title="Seguros para a sua Empresa &#8211; Clique para conhecer nossas opções">{{ $item->name }}</a>
-                                    <div class="sub-menu-open"></div>
-                                    <ul class="sub-menu">
-                                        @foreach ($item->products as $productitem)
-                                            <li class="menu-item">
-                                                <a
-                                                    href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                            @foreach ($categories_consorcios as $item)
-                                <li id="menu-item-41550"
-                                    class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41550">
-                                    <a href="/seguros-empresas"
-                                        title="Consórcios &#8211; Clique para conhecer nossas opções">{{ $item->name }}</a>
-                                    <div class="sub-menu-open"></div>
-                                    <ul class="sub-menu">
-                                        @foreach ($item->products as $productitem)
-                                            <li class="menu-item">
-                                                <a
-                                                    href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
+                            <li id="menu-item-41523"
+                                class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41523">
+                                <a href="/seguros"
+                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros</a>
+                                <div class="sub-menu-open"></div>
+                                <ul class="sub-menu">
+                                    @foreach ($categories_geral as $item)
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="{{ $item->link }}"
+                                                title="assets/icons/common/menu/viagens/icon-menu-viagem2.svg">
+                                                {{ $item->name }}
+                                            </a>
+                                            <div class="sub-menu-open"></div>
+                                            <ul class="sub-menu">
+                                                @foreach ($item->products as $productitem)
+                                                    <li class="menu-item">
+                                                        <a
+                                                            href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </li>
+                            <li id="menu-item-41523"
+                                class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41523">
+                                <a href="/seguros"
+                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Consórcios</a>
+                                <div class="sub-menu-open"></div>
+                                <ul class="sub-menu">
+                                    @foreach ($categories_consorcios as $item)
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="{{ $item->link }}"
+                                                title="assets/icons/common/menu/viagens/icon-menu-viagem2.svg">
+                                                {{ $item->name }}
+                                            </a>
+                                            <div class="sub-menu-open"></div>
+                                            <ul class="sub-menu">
+                                                @foreach ($item->products as $productitem)
+                                                    <li class="menu-item">
+                                                        <a
+                                                            href="/seguro/{{ $productitem->slug }}">{{ $productitem->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </li>
+
+
                         </ul>
                     </nav>
                 </div>
@@ -383,7 +405,7 @@
                         <li class="has-children full-menu">
                             <div class="cd-dropdown-wrapper">
                                 <a class="cd-dropdown-trigger" id="consorcios-2"
-                                    title="clique para ver mais no menu Para a sua Empresa" href="/seguros-empresa"
+                                    title="clique para ver mais no menu Para a sua Empresa" href="/consorcios"
                                     data-menu-items-target="menuItems-consorcios-2" data-submenu-full-width="true">
                                     Consócios </a>
 
@@ -551,6 +573,69 @@
                     </div>
                 </div>
             </div>
+            <div class="menuItems" id="menuItems-consorcios-2" data-child-of="consorcios-2">
+                <div class="row">
+                    <div class="side col-md-4">
+                        <ul aria-orientation="vertical" aria-controls="menu" role="listbox">
+                            @foreach ($categories_consorcios as $item)
+                                <li role="group">
+                                    <a class="link {{ $loop->iteration == 1 ? 'active' : '' }}"
+                                        href="{{ $item->link }}" target="" alt="{{ $item->name }}"
+                                        title="Ir para {{ $item->name }}"
+                                        data-target="{{ $item->slug }}-{{ $item->id }}-items">
+                                        <span>{{ $item->name }}</span>
+                                        <img class="icon" src="/assets/images/icons/arrow-right-preto.svg"
+                                            alt="Abrir" title="abrir" width="10px" height="10px">
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="menu-items col-md-8">
+                        @foreach ($categories_consorcios as $item)
+                            <div id="{{ $item->slug }}-{{ $item->id }}-items"
+                                class="menu-item menu-item{{ $loop->iteration }} {{ $loop->iteration == 1 ? 'active' : '' }} {{ isset($item->comunicado->name) ? 'half' : 'full' }}">
+                                <ul class="submenu-items">
+                                    @foreach ($item->products as $product_item)
+                                        <li class="submenu-item">
+                                            <a class="link" href="/seguro/{{ $product_item->slug }}"
+                                                title="Ir para {{ $product_item->name }}">
+                                                {{ $product_item->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                @if (isset($item->comunicado) &&
+                                        isset($item->comunicado->name) &&
+                                        isset($item->comunicado->description) &&
+                                        $item->comunicado->mostrar == 1)
+                                    <div class="wrapper-comunicado">
+                                        <div class="comunicado cinza"
+                                            aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
+
+                                            @if ($item->icon_path != 'Nada enviado')
+                                                <img class="icone"
+                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
+                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
+                                                    title="{{ $item->comunicado->name }}">
+                                            @endif
+
+                                            <p class="title">{{ $item->comunicado->name }}</p>
+                                            <p class="text">{{ $item->comunicado->description }}</p>
+
+                                            <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
+                                                Cote Agora
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -657,6 +742,8 @@
                                 <a href="/seguros" role="link">Nossos seguros para você</a>
                                 <br><br>
                                 <a href="/seguros-empresas" role="link">Nossos seguros para a sua empresa</a>
+                                <br><br>
+                                <a href="/consorcios" role="link">Consórcios</a>
                             </div>
                         </div>
                     </div>

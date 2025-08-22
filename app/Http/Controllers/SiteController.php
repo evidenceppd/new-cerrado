@@ -34,6 +34,12 @@ class SiteController extends Controller
         return view('categories', compact('categories_selecionada', 'type'));
     }
 
+    public function consorcios() {
+        $categories_selecionada = ProductsCategories::where('mostrar', 1)->where('type', 'consorcio')->get();
+        $type = "consorcio";
+        return view('categories', compact('categories_selecionada', 'type'));
+    }
+
 
     public function blog(Request $request)
     {

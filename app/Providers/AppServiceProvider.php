@@ -37,15 +37,22 @@ class AppServiceProvider extends ServiceProvider
             $categories_para_empresa = ProductsCategories::with(['products' => function ($q) {
                 $q->where('published', 1);
             }])->where("type", "seguro_para_empresa")->where('mostrar', 1)->get();
-            
+
+            $categories_consorcios = ProductsCategories::with(['products' => function ($q) {
+                $q->where('published', 1);
+            }])->where("type", "consorcio")->where('mostrar', 1)->get();
+
             $categories = ProductsCategories::where('mostrar', 1)->get();
             $corretores = Corretor::where('mostrar', 1)->get();
             $products = Product::all();
-            View::share('categories_geral', $categories_geral);
-            View::share('categories_para_empresa', $categories_para_empresa);
-            View::share('products', $products);
-            View::share('categories', $categories);
-            View::share('corretores', $corretores);
+            View::share([
+                'categories_geral'         => $categories_geral,
+                'categories_para_empresa'  => $categories_para_empresa,
+                'categories_consorcios'    => $categories_consorcios,
+                'products'                 => $products,
+                'categories'               => $categories,
+                'corretores'               => $corretores,
+            ]);
         } catch (\Exception $e) {
             logger()->error('Erro ao conectar no banco de dados: ' . $e->getMessage());
         }

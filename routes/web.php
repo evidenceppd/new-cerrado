@@ -17,6 +17,7 @@ Route::get('/', [SiteController::class, 'index'])->name('index');
 
 Route::get('/seguros', [SiteController::class, 'secureGeral']);
 Route::get('/seguros-empresas', [SiteController::class, 'secureEmpresa']);
+Route::get('/consorcios', [SiteController::class, 'consorcios']);
 
 //Rotas públicas para produtos e single produtos
 Route::get('/seguro/{slug}', [ProductController::class, 'show'])->name('product.show');

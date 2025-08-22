@@ -87,7 +87,7 @@
                                                 seguro <span><i class='bx bx-question-mark'></i></span>
                                             </label>
                                             <div class="input-group">
-                                                <select name="type" id="type" class="form-control">
+                                                <select name="type" id="type" class="form-control" required>
                                                     <option value="">Selecione uma opção</option>
                                                     <option
                                                         {{ isset($categorie) && $categorie->type == 'seguro_geral' ? 'selected' : '' }}
@@ -95,6 +95,9 @@
                                                     <option
                                                         {{ isset($categorie) && $categorie->type == 'seguro_para_empresa' ? 'selected' : '' }}
                                                         value="seguro_para_empresa">Seguros para Empresas</option>
+                                                    <option
+                                                        {{ isset($categorie) && $categorie->type == 'consorcio' ? 'selected' : '' }}
+                                                        value="consorcio">Consórcios</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -131,8 +134,7 @@
                                                 data-bs-title="Aqui você seleciona o ícone que irá aparecer no comunicado e no item do carrocel da página principal.">Ícone
                                                 do seguro<span><i class='bx bx-question-mark'></i></span>
                                             </label>
-                                            <input type="file" name="icon_path" class="form-control" aria-label="file"
-                                                accept="image/*" {{ isset($categorie->icon_path) ? '' : 'required=""' }}>
+                                            <input type="file" name="icon_path" class="form-control" aria-label="file">
                                         </div>
                                         @if (isset($categorie->icon_path))
                                             <div class="col-12 col-lg-1 mb-3">

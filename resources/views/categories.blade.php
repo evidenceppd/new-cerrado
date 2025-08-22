@@ -72,7 +72,7 @@
             width: 100%;
             height: 80%;
             /* border-bottom-left-radius: 0;
-                                                    border-bottom-right-radius: 0; */
+                                                        border-bottom-right-radius: 0; */
         }
 
         .img-single-seguro img {
@@ -114,9 +114,15 @@
         <div class="row">
 
             <div class="seguro-text">
-                <h1>Nossos seguros {{ $type == 'para_empresa' ? 'para a sua empresa' : '' }}</h1>
+                @if ($type == 'consorcio')
+                    <h1>Confira os nossos consórcios</h1>
 
-                <h3>Confira os nossos seguros {{ $type == 'para_empresa' ? 'para a sua corporação!' : '' }}</h3>
+                    <h3>Explore nossas opções de Consórcios!</h3>
+                @else
+                    <h1>Nossos seguros {{ $type == 'para_empresa' ? 'para a sua empresa' : '' }}</h1>
+
+                    <h3>Confira os nossos seguros {{ $type == 'para_empresa' ? 'para a sua corporação!' : '' }}</h3>
+                @endif
             </div>
 
         </div>

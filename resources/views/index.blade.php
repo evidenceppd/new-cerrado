@@ -30,6 +30,8 @@
     <link href="
     https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     " rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/modal.css">
 @endsection
 
 @section('css')
@@ -55,6 +57,83 @@
                                     <div class="item-box"><img src="/assets/images/icons/cap.svg"
                                             alt="Ícone de um capacete"></div>
                                     <div class="item-box"><img src="/assets/images/icons/car.svg" alt="Ícone de um carro">
+                                    </div>
+                                </div>
+
+                                <!-- Botão que abre o modal -->
+                                <button type="button" class="simular-modal" data-bs-toggle="modal"
+                                    data-bs-target="#modalSimule">
+                                    Simule já!
+                                </button>
+
+                                <!-- Estrutura do Modal -->
+                                <div class="modal fade" id="modalSimule" tabindex="-1" aria-hidden="true"
+                                    style="overflow: hidden">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+
+                                                <div class="modal-header_text">
+                                                    <h5 class="modal-title">Descubra algo incrível</h5>
+                                                    <p>Insira seus dados e simule seu consórcio de forma rápida, prática e
+                                                        totalmente online.</p>
+                                                </div>
+
+                                                <form id="meu-formulario">
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" name="name"
+                                                            id="name" placeholder="Nome Completo">
+                                                        <div class="text-danger small error-msg" id="error-name"></div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="email" class="form-control" name="email"
+                                                            id="email" placeholder="E-mail">
+                                                        <div class="text-danger small error-msg" id="error-email"></div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" name="celular"
+                                                            id="celular" placeholder="Telefone Celular">
+                                                        <div class="text-danger small error-msg" id="error-celular"></div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" name="cidade"
+                                                            id="cidade" placeholder="Cidade">
+                                                        <div class="text-danger small error-msg" id="error-cidade"></div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <select name="tipo-consorcio" id="tipo-consorcio"
+                                                            class="form-control">
+                                                            <option value="">Selecione o tipo de consórcio</option>
+                                                            <option value="auto">Consórcio Auto</option>
+                                                            <option value="moto">Consórcio Moto</option>
+                                                            <option value="pesados">Consórcio Pesados</option>
+                                                            <option value="imoveis">Consórcio Imóveis</option>
+                                                            <option value="servicos">Consórcio Serviços</option>
+                                                        </select>
+                                                        <div class="text-danger small error-msg"
+                                                            id="error-tipo-consorcio"></div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" name="valor_credito"
+                                                            id="valor-credito" placeholder="Valor do crédito">
+                                                        <div class="text-danger small error-msg" id="error-valor-credito">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">Aceito os
+                                                            termos</label>
+                                                        <div class="text-danger small error-msg" id="error-check"></div>
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="simular-modal"
+                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="simular-modal">Enviar Contato</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,24 +275,24 @@
                                     @endforeach
 
 
-                                    </div> 
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="arrow-down toggle-arrow">
-                                <a aria-label="Rolar para baixo" href="#acesse-de-forma-rapida-os-serviços">
-                                    <svg width="38" height="21" viewBox="0 0 38 21" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M1.34191 2.58095C1.07695 2.2966 0.932708 1.92051 0.939564 1.5319C0.94642 1.1433 1.10384 0.772533 1.37867 0.497707C1.6535 0.222881 2.02427 0.0654559 2.41287 0.0585994C2.80147 0.051743 3.17756 0.195991 3.46191 0.460951L19.4619 16.4609L34.9019 0.460949C35.1863 0.195989 35.5624 0.0517415 35.951 0.0585979C36.3396 0.0654544 36.7103 0.22288 36.9852 0.497706C37.26 0.772532 37.4174 1.1433 37.4243 1.5319C37.4311 1.9205 37.2869 2.2966 37.0219 2.58095L19.4619 20.4239L1.34191 2.58095Z"
-                                            fill="white" />
-                                    </svg>
-                                </a>
-                            </div>
+                        <div class="arrow-down toggle-arrow">
+                            <a aria-label="Rolar para baixo" href="#acesse-de-forma-rapida-os-serviços">
+                                <svg width="38" height="21" viewBox="0 0 38 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.34191 2.58095C1.07695 2.2966 0.932708 1.92051 0.939564 1.5319C0.94642 1.1433 1.10384 0.772533 1.37867 0.497707C1.6535 0.222881 2.02427 0.0654559 2.41287 0.0585994C2.80147 0.051743 3.17756 0.195991 3.46191 0.460951L19.4619 16.4609L34.9019 0.460949C35.1863 0.195989 35.5624 0.0517415 35.951 0.0585979C36.3396 0.0654544 36.7103 0.22288 36.9852 0.497706C37.26 0.772532 37.4174 1.1433 37.4243 1.5319C37.4311 1.9205 37.2869 2.2966 37.0219 2.58095L19.4619 20.4239L1.34191 2.58095Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <section id="banner-seguro-vida"></section>
@@ -234,7 +313,7 @@
                     <div class="col-12 col-md-7" id="menubar" aria-orientation="vertical" aria-controls="menu"
                         role="listbox">
                         <ul id="menu-home-area-cliente" class="menu-area-cliente">
-                            
+
                             @foreach ($categories as $item)
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                     <a href="{{ $item->link }}">{{ $item->name }}</a>
@@ -283,26 +362,73 @@
 @section('js')
     <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
     <script>
-        const swiperEl = document.querySelector('swiper-container')
-        Object.assign(swiperEl, {
-            loop: true,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+        $('#meu-formulario').on('submit', function(e) {
+            e.preventDefault();
+
+            // Limpa mensagens de erro
+            $('.error-msg').text('');
+
+            let hasError = false;
+
+            // Valida campos
+            if ($('#name').val().trim() === '') {
+                $('#error-name').text('O nome é obrigatório.');
+                hasError = true;
+            }
+
+            let email = $('#email').val().trim();
+            if (email === '') {
+                $('#error-email').text('O e-mail é obrigatório.');
+                hasError = true;
+            } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                $('#error-email').text('Digite um e-mail válido.');
+                hasError = true;
+            }
+
+            if ($('#celular').val().trim() === '') {
+                $('#error-celular').text('O telefone é obrigatório.');
+                hasError = true;
+            }
+
+            if ($('#cidade').val().trim() === '') {
+                $('#error-cidade').text('A cidade é obrigatória.');
+                hasError = true;
+            }
+
+            if ($('#tipo-consorcio').val() === '') {
+                $('#error-tipo-consorcio').text('Selecione o tipo de consórcio.');
+                hasError = true;
+            }
+
+            if ($('#valor-credito').val().trim() === '') {
+                $('#error-valor-credito').text('O valor do crédito é obrigatório.');
+                hasError = true;
+            }
+
+            if (!$('#exampleCheck1').is(':checked')) {
+                $('#error-check').text('Você precisa aceitar os termos.');
+                hasError = true;
+            }
+
+            // Se tiver erro, para aqui
+            if (hasError) return;
+
+            // Se estiver tudo certo, envia via AJAX
+            $.ajax({
+                url: '/sua-rota-laravel', // Substitua pela sua rota
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    alert('Formulário enviado com sucesso!');
+                    $('#meu-formulario')[0].reset();
                 },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 8,
-                    spaceBetween: 20,
-                },
-            },
+                error: function(xhr) {
+                    alert('Ocorreu um erro ao enviar o formulário.');
+                }
+            });
         });
-        swiperEl.initialize();
     </script>
 
     <script>

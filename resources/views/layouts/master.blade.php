@@ -30,6 +30,7 @@
     <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
     <link rel='stylesheet' href='/assets/css/bootstrap-grid.min.css' media='all' />
     <link rel='stylesheet' href='/assets/css/bootstrap-utilities.min.css' media='all' />
+   
     <link rel='stylesheet' id='tm-lgpd-cookie-css' href='/assets/css/cookieModal.css' media='all' />
     <link rel='stylesheet' id='global-css' href='/assets/css/global.css' media='all' />
     <link rel='stylesheet' id='CookieConsent-css' href='/assets/css/cookie.css' media='all' />
@@ -73,6 +74,10 @@
         }
     </style>
     @yield('css')
+
+    <style>
+        
+    </style>
 </head>
 
 <body class="home">
@@ -308,10 +313,10 @@
                             <li id="menu-item-41523"
                                 class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41523">
                                 <a href="/seguros"
-                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros</a>
+                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros para empresas</a>
                                 <div class="sub-menu-open"></div>
                                 <ul class="sub-menu">
-                                    @foreach ($categories_geral as $item)
+                                    @foreach ($categories_para_empresa as $item)
                                         <li class="menu-item menu-item-has-children">
                                             <a href="{{ $item->link }}"
                                                 title="assets/icons/common/menu/viagens/icon-menu-viagem2.svg">
@@ -499,7 +504,7 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20{{ $item->comunicado->name }}.">
                                                 Cote
                                                 Agora</a>
                                         </div>
@@ -561,7 +566,7 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20{{ $item->comunicado->name }}.">
                                                 Cote Agora
                                             </a>
                                         </div>
@@ -624,7 +629,7 @@
                                             <p class="text">{{ $item->comunicado->description }}</p>
 
                                             <a class="btn" target="_self" title="Cote Agora" alt="Cote Agora"
-                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20seguro%20{{ $item->comunicado->name }}.">
+                                                href="https://wa.me/556434130555?text=Olá,%20gostaria%20de%20fazer%20uma%20cotação%20do%20{{ $item->comunicado->name }}.">
                                                 Cote Agora
                                             </a>
                                         </div>

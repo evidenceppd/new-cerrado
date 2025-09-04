@@ -123,10 +123,10 @@
                                         <i class="ri-user-fill align-middle me-2 fs-18"></i><span
                                             class="align-middle">Corretores</span>
                                     </a>
-                                    {{-- <a class="dropdown-item" href="{{ route('leads.index') }}">
+                                    <a class="dropdown-item" href="{{ route('leads.index') }}">
                                         <i class="ri-group-fill align-middle me-2 fs-18"></i><span
                                             class="align-middle">Leads</span>
-                                    </a> --}}
+                                    </a>
 
 
                                     <div class="dropdown-divider my-1"></div>
@@ -337,7 +337,7 @@
                             <ul class="nav sub-navbar-nav">
                                 <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="{{ route('product.create') }}">Adicionar novo <br>
-                                        Seguro /  Consórcio</a>
+                                        Seguro / Consórcio</a>
                                 </li>
 
                                 <li class="sub-nav-item">
@@ -376,7 +376,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-title">Corretores</li>
+                    <li class="menu-title">Corretores e Leads</li>
 
                     <li class="nav-item">
                         <a class="nav-link menu-arrow" href="#sidebarcorretores" data-bs-toggle="collapse"
@@ -398,6 +398,15 @@
                                 </li>
                             </ul>
                         </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ route('leads.index') }}>
+                            <span class="nav-icon">
+                                <i class="ri-group-fill"></i>
+                            </span>
+                            <span class="nav-text">Leads</span>
+                        </a>
                     </li>
                 </ul>
             </div>

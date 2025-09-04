@@ -26,6 +26,10 @@ Route::get('/seguro/{slug}', [ProductController::class, 'show'])->name('product.
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{url}', [PostController::class, 'show'])->name('blog.show');
 
+//Rotas de cadastro de leads
+Route::post('/lead/cadastrar-download', [LeadController::class, 'registerDownload']);
+Route::post('/lead/enviar-orcamento', [LeadController::class, 'sendOrcamento']);
+
 //Rotas de categoria
 Route::get('/seguros/{slug}', [ProductsCategoriesController::class, 'show'])->name('categories.show');
 
@@ -63,6 +67,11 @@ Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::get('/banners/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::post('/banners/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
     Route::post('/banners/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+
+    Route::get('/leads', [LeadController::class, 'index'])->name('leads.index');
+    Route::get('/leads/edit/{id}', [LeadController::class, 'edit'])->name('leads.edit');
+    Route::post('/leads/edit/{id}', [LeadController::class, 'update'])->name('leads.update');
+    Route::post('/leads/delete/{id}', [LeadController::class, 'destroy'])->name('leads.delete');
 
     Route::get('/corretores', [CorretorController::class, 'index'])->name('corretores.index');
     Route::get('/corretores/create', [CorretorController::class, 'create'])->name('corretores.create');

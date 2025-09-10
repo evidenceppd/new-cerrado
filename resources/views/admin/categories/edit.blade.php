@@ -128,22 +128,22 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
-                                        <div class="col-12 mb-3">
+                                        {{-- <div class="col-12 mb-3">
                                             <label for="icon_path" class="form-label" data-bs-toggle="tooltip"
                                                 data-bs-placement="right"
                                                 data-bs-title="Aqui você seleciona o ícone que irá aparecer no comunicado e no item do carrocel da página principal.">Ícone
                                                 do seguro<span><i class='bx bx-question-mark'></i></span>
                                             </label>
                                             <input type="file" name="icon_path" class="form-control" aria-label="file">
-                                        </div>
-                                        @if (isset($categorie->icon_path))
+                                        </div> --}}
+                                        {{-- @if (isset($categorie->icon_path))
                                             <div class="col-12 col-lg-1 mb-3">
                                                 <img style="min-width: 50%;" src="{{ $categorie->icon_path }}"
                                                     alt="{{ $categorie->title }}" class="img-fluid rounded">
                                             </div>
                                             <input type="hidden" name="icon_path_existing"
                                                 value="{{ $categorie->icon_path }}">
-                                        @endif
+                                        @endif --}}
                                     </div>
                                 </div>
                                 <div class="card">

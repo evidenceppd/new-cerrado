@@ -48,17 +48,6 @@ class ProductsCategoriesController extends Controller
                 $path = "/storage/media/categories/" . $filename;
             }
 
-            if ($request->hasFile('icon_path')) {
-                $iconfile = $request->file('icon_path');
-                $iconextension = $iconfile->getClientOriginalExtension();
-                $iconfilename = Str::random(40) . '.' . $iconextension;
-
-                $iconfile->storeAs('media/categories/', $iconfilename, 'public');
-
-                $iconpath = "/storage/media/categories/" . $iconfilename;
-            } else {
-                $iconpath = "Nada enviado";
-            }
 
             $slug = Str::slug($request->name);
 
@@ -67,7 +56,6 @@ class ProductsCategoriesController extends Controller
                 'description' => $request->description,
                 'main_image' => $path,
                 'slug' => $slug,
-                'icon_path' => $iconpath,
                 'type' => $request->type,
                 'link' => isset($request->categorie_link) ? $request->categorie_link : '/seguros/' . $slug,
                 'mostrar' => isset($request->mostrar_categoria) ? 1 : 0,
@@ -135,18 +123,6 @@ class ProductsCategoriesController extends Controller
                 $path = $categorie->main_image;
             }
 
-            if ($request->hasFile('icon_path')) {
-                $iconfile = $request->file('icon_path');
-                $iconextension = $iconfile->getClientOriginalExtension();
-                $iconfilename = Str::random(40) . '.' . $iconextension;
-
-                $iconfile->storeAs('media/categories/', $iconfilename, 'public');
-
-                $iconpath = "/storage/media/categories/" . $iconfilename;
-            } else {
-                $iconpath = $categorie->icon_path;
-            }
-
             $categorie->comunicado()->updateOrCreate(
                 ['categorie_id' => $categorie->id],
                 [
@@ -164,7 +140,6 @@ class ProductsCategoriesController extends Controller
             $categorie->slug = Str::slug($request->name);
             $categorie->user_id = Auth::user()->id;
             $categorie->type = $request->type;
-            $categorie->icon_path = $iconpath;
             $categorie->mostrar = isset($request->mostrar_categoria) ? 1 : 0;
 
             $categorie->link = isset($request->categorie_link) ? $request->categorie_link : '/seguros/' . $categorie->slug;

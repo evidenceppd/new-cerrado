@@ -19,6 +19,8 @@ Route::get('/seguros', [SiteController::class, 'secureGeral']);
 Route::get('/seguros-empresas', [SiteController::class, 'secureEmpresa']);
 Route::get('/consorcios', [SiteController::class, 'consorcios']);
 
+Route::get('/termos-e-condicoes', [SiteController::class, 'terms'])->name('terms');
+
 //Rotas públicas para produtos e single produtos
 Route::get('/seguro/{slug}', [ProductController::class, 'show'])->name('product.show');
 
@@ -27,8 +29,9 @@ Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{url}', [PostController::class, 'show'])->name('blog.show');
 
 //Rotas de cadastro de leads
-Route::post('/lead/cadastrar-download', [LeadController::class, 'registerDownload']);
-Route::post('/lead/enviar-orcamento', [LeadController::class, 'sendOrcamento']);
+
+Route::post('/enviar-contato/enviar', [LeadController::class, 'sendOrcamento'])->name('enviarContato');
+Route::post('/enviar-contato-consorcio/enviar', [LeadController::class, 'sendConsorcio'])->name('enviarContatoConsorcio');
 
 //Rotas de categoria
 Route::get('/seguros/{slug}', [ProductsCategoriesController::class, 'show'])->name('categories.show');

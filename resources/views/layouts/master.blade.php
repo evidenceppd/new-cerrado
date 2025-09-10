@@ -13,6 +13,7 @@
 
     <!-- Favicon -->
     {{-- <meta name="theme-color" content="#018B82" /> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="apple-mobile-web-app-title" content="Cerrado Seguros e Consórcios" />
     <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
@@ -30,7 +31,9 @@
     <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
     <link rel='stylesheet' href='/assets/css/bootstrap-grid.min.css' media='all' />
     <link rel='stylesheet' href='/assets/css/bootstrap-utilities.min.css' media='all' />
-   
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <link rel='stylesheet' id='tm-lgpd-cookie-css' href='/assets/css/cookieModal.css' media='all' />
     <link rel='stylesheet' id='global-css' href='/assets/css/global.css' media='all' />
     <link rel='stylesheet' id='CookieConsent-css' href='/assets/css/cookie.css' media='all' />
@@ -66,6 +69,10 @@
     <script type="text/javascript" src="/assets/js/faq.min.js" id="faq-js"></script>
     <script type="text/javascript" src="/assets/js/jquery.min.js" id="jquery-core-js"></script>
     <script type="text/javascript" src="/assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
     <style type="text/css">
         .recentcomments a {
             display: inline !important;
@@ -76,7 +83,7 @@
     @yield('css')
 
     <style>
-        
+
     </style>
 </head>
 
@@ -230,7 +237,7 @@
                     <li>
                         <a target="_blank" class="novo-btn-area-do-cliente" href="https://linktr.ee/cerradoconsorcio"
                             style="cursor: pointer;" rel="noopener noreferrer" role="button"
-                            aria-label="Nossas redes" alt="Nossas redes Cerrado Consórcios e Seguros"
+                            aria-label="Nossas redes" alt="Nossas redes Cerrado Consórcios e Síconeeguros"
                             title="ir para Nossas redes sociais">
                             <img src="/assets/images/icons/share.svg" class="mr-2" alt="Nossas redes - Cerrado"
                                 title="Nossas redes - Cerrado" width="20px" height="20px" />
@@ -313,7 +320,8 @@
                             <li id="menu-item-41523"
                                 class="full-width menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41523">
                                 <a href="/seguros"
-                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros para empresas</a>
+                                    title="Voltar ao início do site. Clique aqui para voltar a página home">Seguros
+                                    para empresas</a>
                                 <div class="sub-menu-open"></div>
                                 <ul class="sub-menu">
                                     @foreach ($categories_para_empresa as $item)
@@ -492,12 +500,7 @@
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            @if ($item->icon_path != 'Nada enviado')
-                                                <img class="icone"
-                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
-                                                    title="{{ $item->comunicado->name }}">
-                                            @endif
+
 
 
                                             <p class="title">{{ $item->comunicado->name }}</p>
@@ -555,12 +558,7 @@
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            @if ($item->icon_path != 'Nada enviado')
-                                                <img class="icone"
-                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
-                                                    title="{{ $item->comunicado->name }}">
-                                            @endif
+
 
                                             <p class="title">{{ $item->comunicado->name }}</p>
                                             <p class="text">{{ $item->comunicado->description }}</p>
@@ -618,12 +616,7 @@
                                         <div class="comunicado cinza"
                                             aria-label="Ir para Cotação do {{ $item->comunicado->name }}">
 
-                                            @if ($item->icon_path != 'Nada enviado')
-                                                <img class="icone"
-                                                    style="{{ $item->icon_path == 'Nada enviado' ? 'display: none;' : '' }}"
-                                                    src="{{ $item->icon_path }}" alt="{{ $item->comunicado->name }}"
-                                                    title="{{ $item->comunicado->name }}">
-                                            @endif
+
 
                                             <p class="title">{{ $item->comunicado->name }}</p>
                                             <p class="text">{{ $item->comunicado->description }}</p>
@@ -814,7 +807,9 @@
     <script type="text/javascript" src="/assets/js/wp-polyfill.min.js" id="wp-polyfill-js"></script>
 
     <script type="text/javascript" src="/assets/js/main.js" id="tm-lgpd-main-js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="text/javascript" src="/assets/js/cookieFunctions.js" id="tm-lgpd-cookie-functions-js"></script>
+
 
     @yield('js')
 </body>

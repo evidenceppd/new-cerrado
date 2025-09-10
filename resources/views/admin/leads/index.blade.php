@@ -88,7 +88,8 @@
                                                     <div class="d-flex align-items-center gap-2">
                                                         <div>
                                                             <div class="avatar-sm bg-light bg-opacity-10 rounded">
-                                                                <i class="ri-user-line fs-18 text-primary avatar-title"></i>
+                                                                <i class="ri-user-line fs-18 text-primary avatar-title"
+                                                                    style="color: #163c67"></i>
                                                             </div>
                                                         </div>
                                                         <div>
@@ -99,13 +100,17 @@
                                                 </td>
                                                 <td>
                                                     <p class="mb-0">
+                                                        @php
+                                                            $data = json_decode($lead->data, true);
+                                                        @endphp
+
                                                         @switch($lead->typeRegister)
                                                             @case(1)
-                                                                Donwload Catálogo
+                                                                Formulário de {{ $data['Tipo de Consórcio'] }}
                                                             @break
 
                                                             @case(2)
-                                                                Formulário
+                                                                Formulário de Simulação
                                                             @break
                                                         @endswitch
                                                     </p>
@@ -117,13 +122,14 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex gap-2">
-                                                        <a href="" class="btn btn-light btn-sm"><iconify-icon
+                                                        <a href="{{ route('leads.edit', $lead->id) }}"
+                                                            class="btn btn-light btn-sm"><iconify-icon
                                                                 icon="solar:eye-broken"
                                                                 class="align-middle fs-18"></iconify-icon></a>
-                                                        <a href="{{ route('leads.edit', $lead->id) }}"
+                                                        {{-- <a href="{{ route('leads.edit', $lead->id) }}"
                                                             class="btn btn-soft-primary btn-sm"><iconify-icon
                                                                 icon="solar:pen-2-broken"
-                                                                class="align-middle fs-18"></iconify-icon></a>
+                                                                class="align-middle fs-18"></iconify-icon></a> --}}
                                                         <form style="display: inline"
                                                             action="{{ route('leads.delete', $lead->id) }}" method="POST">
                                                             @csrf

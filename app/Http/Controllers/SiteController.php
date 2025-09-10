@@ -67,4 +67,8 @@ class SiteController extends Controller
 
         return view('search-result', compact('posts', 'products', 'search'));
     }
+
+    public function terms() {
+        return view('terms');
+    }
 }

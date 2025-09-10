@@ -354,6 +354,73 @@
 
 /* CUSTOM CSS */
 
+.modal {
+    font-family: 'Poppins', 'Magistral', sans-serif;
+}
+
+.modal h3 {
+    font-family: 'Magistral', 'Titillium Web', sans-serif;
+    color: #163c67;
+    font-size: 2.5rem;
+}
+
+
+.simular-modal {
+    font-family: 'Magistral', 'Titillium Web', sans-serif;
+    color: #ffdf2e;
+    background-color: #163c67;
+    border-radius: 9px;
+    margin-top: 2rem;
+    border: 2px solid #ffdf2e;
+    padding: 4px 10px;
+    font-size: 2rem;
+    transition: all 0.2s ease;
+}
+
+.modal .form-control {
+    height: 44px;
+    font-size: 15px;
+    margin: 1.2rem 0;
+}
+
+.modal .form-control:focus {
+    border-color: #ffdf2e;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset, rgba(255, 223, 46, 0.6) 0px 0px 4.70494px 0px;
+    color: #163c67;
+}
+
+.modal .simular-modal {
+    font-size: 1.5rem;
+}
+
+.simular-modal:hover {
+    transform: scale(1.05);
+    color: #163c67;
+    background-color: #ffdf2e;
+    border-color: #163c67;
+}
+
+.simular-modal:disabled {
+    opacity: 0.7;
+}
+
+.simular-modal:disabled:hover {
+    opacity: 0.7;
+    color: #ffdf2e;
+    background-color: #163c67;
+    border: 2px solid #ffdf2e;
+    transform: scale(1);
+}
+
+.modal .form-chech-label {
+    font-weight: 400;
+}
+
+.modal .form-chech-label a{
+    font-weight: 700;
+    color: #163c67;
+}
+
 /* 
 .modal.show {
     opacity: 1;

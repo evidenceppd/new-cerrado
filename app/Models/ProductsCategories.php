@@ -12,7 +12,6 @@ class ProductsCategories extends Model
         'description',
         'slug',
         'link',
-        'icon_path',
         'type',
         'mostrar'
     ];

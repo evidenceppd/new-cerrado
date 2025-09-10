@@ -437,6 +437,8 @@
     <script src="/assets_admin/vendor/jsvectormap/js/jsvectormap.min.js"></script>
     <script src="/assets_admin/vendor/jsvectormap/maps/world-merc.js"></script>
     <script src="/assets_admin/vendor/jsvectormap/maps/world.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
